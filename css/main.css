@@ -49,9 +49,64 @@ textarea {
     padding: 0.2em 0;
 }
 
-/* ===== Button Styles ==================================================
-   Author: Richard Luo
-   ========================================================================== */
+/* ===== Parallax Effect ================================================== */
+
+.bgimg-1, .bgimg-2 {
+    position: relative;
+    opacity: 0.95;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bgimg-1 {
+    background-image: url("../img/bg.webp");
+    height: 100%;
+}
+
+.bgimg-2 {
+    background-image: url("../img/bg2.webp");
+    height: 30%;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: #0f0;
+    margin-top: 10px;
+}
+
+.caption span.border {
+    background-color: none;
+    color: #eee;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    width: 100%;
+    font-size: 6.5vw;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+
+.caption span.border:hover {
+    letter-spacing: .05em;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+/* ===== Button Styles ================================================== */
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 button.snip0059 {
@@ -141,18 +196,7 @@ button.snip0059.blue {
     }
 }
 
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 1vw/1vw Helvetica, Helvetica Neue, Arial;
-}
-
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
-}
+/* ===== Navigation Bar ========================================================================== */
 
 .nav {
     height: auto;
@@ -170,6 +214,7 @@ body {
     display: inline-block;
     font-size: 22px;
     padding: 10px 10px 10px 10px;
+    font-family: "Patua One";
 }
 
 .nav>.nav-btn {
@@ -186,10 +231,12 @@ body {
     padding: 13px 10px 13px 10px;
     text-decoration: none;
     color: #454545;
+    transition: all 0.3s ease-in;
 }
 
 .nav>.nav-links>a:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    border-bottom: 3px solid #2b2b2b;
 }
 
 .nav>#nav-check {
@@ -255,8 +302,14 @@ body {
     font-weight: 400;
     line-height: 1.12;
     color: #333;
+    font: 21px Helvetica, Helvetica Neue, Arial;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
 }
 
 @font-face {

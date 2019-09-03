@@ -157,8 +157,9 @@ body {
 .nav {
     height: 50px;
     width: 100%;
-    background-color: #4d4d4d;
+    background-color: #eee;
     position: relative;
+    box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.00)
 }
 
 .nav>.nav-header {

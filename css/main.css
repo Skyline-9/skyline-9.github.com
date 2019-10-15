@@ -76,8 +76,8 @@ textarea {
     top: 30%;
     width: 100%;
     text-align: center;
-    color: #0f0;
-    margin-top: 10px;
+    color: #fff;
+    margin-top: 15px;
 }
 
 .caption span.border {
@@ -229,6 +229,7 @@ button.snip0059.blue {
 
 .nav>.nav-links>a {
     display: inline-block;
+    vertical-align: middle;
     padding: 13px 10px 13px 10px;
     text-decoration: none;
     color: #454545;

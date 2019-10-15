@@ -207,7 +207,7 @@ button.snip0059.blue {
 }
 
 .nav>.nav-header {
-    display: inline;
+    float: left;
 }
 
 .nav>.nav-header>.nav-title {

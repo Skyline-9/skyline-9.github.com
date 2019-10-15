@@ -319,7 +319,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: corbert;
+    font-family: "Nunito";
     font-weight: inherit;
     line-height: 1.2;
     margin: 0;
@@ -328,7 +328,6 @@ h1, h2, h3, h4, h5 {
 h1 {
     -webkit-transition: all .25s;
     transition: all .25s;
-    font-family: langdon;
     font-size: 6.854em;
     font-size: 4vw;
     margin-top: -.45em;
@@ -342,7 +341,6 @@ h1:hover {
 }
 
 h2 {
-    font-family: kankin;
     font-size: 4.236em;
     font-size: 4.236vw;
 }
@@ -360,7 +358,6 @@ h4 {
 
 h5 {
     font-size: 1.75em;
-    font-family: urbanelegance, sans-serif;
 }
 
 small, .font_small {

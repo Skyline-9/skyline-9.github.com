@@ -420,7 +420,6 @@ a {
 }
 
 h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, p a:hover {
-    text-decoration: underline #0066ff;
     letter-spacing: 0.05em;
 }
 

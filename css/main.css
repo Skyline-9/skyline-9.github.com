@@ -176,9 +176,9 @@ textarea {
 /* Turn off parallax scrolling for tablets and phones */
 
 @media only screen and (max-device-width: 1024px) {
-.bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-}
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
 }
 /* ===== Box Shadows ================================================== */
 .card {
@@ -189,15 +189,13 @@ textarea {
     margin: 1rem;
     position: relative;
     width: 300px;
-    float: left;
     margin-right: 3rem;
     padding: 0.4rem;
     padding-bottom: 2.5rem;
     padding-top: 2.5rem;
-}
-.card-3 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
 /* ===== Button Styles ================================================== */
 
 button.snip0059 {

@@ -1,5 +1,5 @@
 /* Preloader */
 $(window).load(function() {
-    $("whirly-loader").fadeOut("slow");
-    $("content").show();
+    $("#whirly-loader").fadeOut("slow");
+    $("#content").show();
 });

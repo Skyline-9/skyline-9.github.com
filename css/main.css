@@ -71,38 +71,38 @@ textarea {
 
 /* ===== Loader ================================================== */
 @-moz-keyframes whirly-loader {
- 0% {
- -moz-transform: rotate(0deg);
- transform: rotate(0deg);
-}
- 100% {
- -moz-transform: rotate(360deg);
- transform: rotate(360deg);
-}
+     0% {
+     -moz-transform: rotate(0deg);
+     transform: rotate(0deg);
+    }
+     100% {
+     -moz-transform: rotate(360deg);
+     transform: rotate(360deg);
+    }
 }
 @-webkit-keyframes whirly-loader {
- 0% {
- -webkit-transform: rotate(0deg);
- transform: rotate(0deg);
-}
- 100% {
- -webkit-transform: rotate(360deg);
- transform: rotate(360deg);
-}
+     0% {
+     -webkit-transform: rotate(0deg);
+     transform: rotate(0deg);
+    }
+     100% {
+     -webkit-transform: rotate(360deg);
+     transform: rotate(360deg);
+    }
 }
 @keyframes whirly-loader {
- 0% {
- -moz-transform: rotate(0deg);
- -ms-transform: rotate(0deg);
- -webkit-transform: rotate(0deg);
- transform: rotate(0deg);
-}
- 100% {
- -moz-transform: rotate(360deg);
- -ms-transform: rotate(360deg);
- -webkit-transform: rotate(360deg);
- transform: rotate(360deg);
-}
+     0% {
+     -moz-transform: rotate(0deg);
+     -ms-transform: rotate(0deg);
+     -webkit-transform: rotate(0deg);
+     transform: rotate(0deg);
+    }
+     100% {
+     -moz-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     transform: rotate(360deg);
+    }
 }
 /* :not(:required) hides this rule from IE9 and below */
 .whirly-loader:not(:required) {

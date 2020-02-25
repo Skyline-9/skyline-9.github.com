@@ -17,13 +17,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     
     <div id="whirly-loader" class="whirly-loader">Loading...</div>
-
+    
+    <!-- JQuery Not in Use
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    -->
     
 </head>
 
 <body>
-<div id="content" class="content">
     <div class="nav">
         <div class="nav-header">
             <div class="nav-title"> <img src="img/logo.png" alt="Richard Logo" style="height: 40px"> </div>
@@ -47,66 +48,6 @@
     <br>
     
     <p class="typewrite" data-period="2000" data-type='[ "Salutations, I am Richard, a senior at Monta Vista High School.", "Welcome to my personal website.", "I hope you find something interesting here!"]'> <span class="wrap"></span> </p>
-    
-    <script>
-		var TxtType = function(el, toRotate, period) {
-				this.toRotate = toRotate;
-				this.el = el;
-				this.loopNum = 0;
-				this.period = parseInt(period, 10) || 2000;
-				this.txt = '';
-				this.tick();
-				this.isDeleting = false;
-			};
-
-			TxtType.prototype.tick = function() {
-				var i = this.loopNum % this.toRotate.length;
-				var fullTxt = this.toRotate[i];
-
-				if (this.isDeleting) {
-				this.txt = fullTxt.substring(0, this.txt.length - 1);
-				} else {
-				this.txt = fullTxt.substring(0, this.txt.length + 1);
-				}
-
-				this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-				var that = this;
-				//var delta = 150 - Math.random() * 100;
-				var delta = 50;
-
-				if (this.isDeleting) { delta /= 2; }
-
-				if (!this.isDeleting && this.txt === fullTxt) {
-				delta = this.period;
-				this.isDeleting = true;
-				} else if (this.isDeleting && this.txt === '') {
-				this.isDeleting = false;
-				this.loopNum++;
-				delta = 500;
-				}
-
-				setTimeout(function() {
-				that.tick();
-				}, delta);
-			};
-
-			window.onload = function() {
-				var elements = document.getElementsByClassName('typewrite');
-				for (var i=0; i<elements.length; i++) {
-					var toRotate = elements[i].getAttribute('data-type');
-					var period = elements[i].getAttribute('data-period');
-					if (toRotate) {
-					  new TxtType(elements[i], JSON.parse(toRotate), period);
-					}
-				}
-				// INJECT CSS
-				var css = document.createElement("style");
-				css.type = "text/css";
-				css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #000}";
-				document.body.appendChild(css);
-			};
-    </script> 
     
     <br>
     
@@ -135,9 +76,8 @@
     
     <hr style="margin-top: 3rem;">
     <p>&copy;2019-2020 Richard Luo. All rights reserved.</p>
-</div>
 
-<!-- Javascript --> 
-<script src="js/main.js"></script>
+    <!-- Javascript --> 
+    <script src="js/main.js"></script>
 </body>
 </html>

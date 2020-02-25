@@ -1,4 +1,2 @@
 /* Preloader */
-$(window).load(function() {
-    $("#whirly-loader").fadeOut("slow");
-});
+$("#whirly-loader").fadeOut("slow");

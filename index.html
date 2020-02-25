@@ -30,8 +30,8 @@
             <div class="nav-title"> <img src="img/logo.png" alt="Richard Logo" style="height: 40px"> </div>
         </div>
         <div class="nav-links">
-            <a href="//github.io/jo_geek" target="_blank">Github</a>
-            <a href="http://stackoverflow.com/users/4084003/" target="_blank">Stackoverflow</a>
+            <a href="//index.html" target="_blank">Home</a>
+            <a href="//about.html" target="_blank">About</a>
             <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
             <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
             <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
@@ -59,11 +59,111 @@
 
     <br>
 
-    <p>Salutations! I’m <b>Richard</b>, a current Monta Vista High School senior with a broad range of interests. Obviously, I love CS, so I'm often busy finding security exploits or tinkering with PC hardware. Besides CS, I dedicate a lot of time towards playing flute, piano and piccolo.</p>
+    <figure class="snip1554">
+      <img src="https://static1.squarespace.com/static/540601bee4b0a806a01d7678/555a6b4ce4b0e109ea9dfba1/555faca6e4b0653951c483d9/1432333574961/Santa+Cruz+Lighthouse.jpg?format=2500w" alt="Santa Cruz" />
+      <figcaption>
+        <h3>Santa Cruz</h3>
+      </figcaption>
+    </figure>
 
-    <br>
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Poppins:700;);
+    .snip1554 {
+      background-color: #045e78;
+      color: #ffffff;
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      margin: 0px;
+      width: 50%;
+      overflow: hidden;
+      position: relative;
+      text-align: left;
+      overflow: hidden;
+    }
 
-    <p>I go skiing every winter, but I also frequently play basketball and used to swim regularly. Usually, I volunteer at least 100 hours a year, and often for different causes. With the rest of my time (if I have any), I enjoy watching movies, philosophizing, and debating politics.</p>
+    .snip1554 * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all 0.45s ease;
+      transition: all 0.45s ease;
+    }
+
+    .snip1554:after {
+      background-color: white;
+      opacity: 0.6;
+      top: 0;
+      bottom: 0;
+      content: '';
+      left: -100%;
+      position: absolute;
+      width: 200px;
+      box-shadow: 0 0 100px white;
+      -webkit-transform: skew(-20deg);
+      transform: skew(-20deg);
+      -webkit-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+    }
+
+    .snip1554 img {
+      vertical-align: top;
+      width: 100%;
+      backface-visibility: hidden;
+    }
+
+    .snip1554 figcaption {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      line-height: 1em;
+      opacity: 0;
+    }
+
+    .snip1554 h3 {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 1.4em;
+      font-weight: 400;
+      line-height: 1.1em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .snip1554 h3 span {
+      font-weight: 700;
+    }
+
+    .snip1554 a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .snip1554:hover > img,
+    .snip1554.hover > img {
+      opacity: 0.4;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+
+    .snip1554:hover:after,
+    .snip1554.hover:after {
+      left: 200%;
+    }
+
+    .snip1554:hover figcaption,
+    .snip1554.hover figcaption {
+      opacity: 1;
+    }
+
+    </style>
 
     <button class="snip0059 yellow" onclick="location.href='https://richardluo.weebly.com/about-me.html'" type="button">Learn more about me </button>
     

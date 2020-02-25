@@ -115,7 +115,8 @@ textarea {
   }
 }
 /* :not(:required) hides this rule from IE9 and below */
-.whirly-loader:not(:required) {
+.whirly-loader:not(:required) 
+    z-index: 999999;
   margin-top: 12vh;
   overflow: hidden;
   position: relative;

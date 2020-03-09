@@ -191,7 +191,7 @@ textarea {
     margin-right: 10vw;
     margin-left: 10vw;
     padding: 2.5rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
 }
 
 /* ===== Button Styles ================================================== */
@@ -213,6 +213,8 @@ button.snip0059 {
     outline: none;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 12px #49c5ff;
+    
 }
 button.snip0059:before {
     content: '';
@@ -257,7 +259,8 @@ button.snip0059.red {
 }
 button.snip0059.yellow {
     background-color: #49c5ff;
-    background-image: linear-gradient(to right, #56ccf2, #2f80ed);
+    /* background-image: linear-gradient(to right, #56ccf2, #2f80ed); */
+    
 }
 @-webkit-keyframes flashText {
  0% {

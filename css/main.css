@@ -49,6 +49,10 @@ textarea {
     padding: 0.2em 0;
 }
 
+.material-icons {
+    vertical-align: -25%
+}
+
 /* ===== Speech Bubble ================================================== */
 .speech-bubble {
     background: #efefef;
@@ -157,22 +161,21 @@ textarea {
 
 .bgimg-1 {
     background-image: url("../img/bg.webp");
-    height: 75vh;
+    height: 30rem;
 }
 
 .bgimg-2 {
-    background-image: url("../img/bg2.webp");
-    height: 30%;
+    background-image: url("../img/cpu.png");
+    height: 20rem;
 }
 
 .caption {
     position: absolute;
     left: 0;
-    top: 30%;
+    top: 50%;
     width: 100%;
     text-align: center;
     color: #fff;
-    margin-top: 15px;
 }
 
 .caption span.border {
@@ -181,7 +184,7 @@ textarea {
     -moz-transition: all .25s;
     transition: all .25s;
     width: 100%;
-    font-size: 5.5vw;
+    font-size: 4rem;
     font-family: 'Nunito', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     letter-spacing: -1px;
@@ -210,8 +213,9 @@ textarea {
     height: auto;
     position: relative;
     width: auto;
-    margin-right: 10vw;
-    margin-left: 10vw;
+    margin-right: 6rem;
+    margin-left: 6rem;
+    margin-bottom: 2rem;
     padding: 2.5rem;
     box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .2);
 }

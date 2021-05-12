@@ -1,0 +1,38 @@
+.card-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.card {
+	background: #fff;
+	border-radius: 2px;
+	height: auto;
+	position: relative;
+	width: auto;
+	margin-right: 10%;
+	margin-left: 10%;
+	margin-bottom: 2rem;
+	margin-top: -5rem;
+	padding: 2.5rem;
+	box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.card-image {
+	max-width: 30vw;
+	height: auto;
+	object-fit: cover;
+}
+
+.card-content {
+	width: 30vw;
+}
+
+@media only screen and (max-width: 768px) {
+	/* For mobile phones: */
+	.card-content {
+		width: 100%;
+	}
+}

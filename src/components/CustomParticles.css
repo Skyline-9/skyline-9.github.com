@@ -1,0 +1,14 @@
+.particles {
+	background: linear-gradient(135deg, rgb(96, 108, 136) 0%, rgb(54, 102, 214) 100%);
+	height: 30rem;
+}
+
+#particle-title {
+	position: absolute;
+	color: aliceblue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 50%;
+}

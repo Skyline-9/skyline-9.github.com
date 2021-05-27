@@ -1,8 +1,11 @@
 .card-container {
+	/*
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	flex-wrap: wrap;
+	*/
+	display: inline-block;
 }
 
 .card {
@@ -21,18 +24,21 @@
 }
 
 .card-image {
-	max-width: 30vw;
+	width: 30%;
 	height: auto;
 	object-fit: cover;
+	float: left;
 }
 
 .card-content {
-	width: 30vw;
+	width: 60%;
+	height: auto;
+	float: right;
 }
 
 @media only screen and (max-width: 768px) {
 	/* For mobile phones: */
-	.card-content {
+	.card-content, .card-image {
 		width: 100%;
 	}
 }

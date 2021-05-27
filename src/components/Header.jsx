@@ -1,5 +1,5 @@
 import "./Header.css";
-import "@fontsource/nunito";
+import PropTypes from "prop-types";
 
 /**
  * Parallax header with specified background image and title
@@ -18,5 +18,10 @@ function Header(props) {
 		</div>
 	);
 }
+
+Header.propTypes = {
+	caption: PropTypes.string,
+	subtitle: PropTypes.string,
+};
 
 export default Header;

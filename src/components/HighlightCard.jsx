@@ -1,4 +1,5 @@
 import "./HighlightCard.css";
+import PropTypes from "prop-types";
 
 function HighlightCard(props) {
 	return (
@@ -17,6 +18,14 @@ function HighlightCard(props) {
 		</div>
 	);
 }
+
+HighlightCard.propTypes = {
+	typewriter: PropTypes.element,
+	imageSrc: PropTypes.string,
+	alt: PropTypes.string,
+	title: PropTypes.string,
+	text: PropTypes.string,
+};
 
 export default HighlightCard;
 

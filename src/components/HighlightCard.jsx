@@ -12,7 +12,7 @@ function HighlightCard(props) {
 				<div className="card-content">
 					<h2>{props.title}</h2>
 					<hr />
-					<p>{props.text}</p>
+					{props.content}
 				</div>
 			</div>
 		</div>

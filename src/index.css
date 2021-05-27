@@ -4,7 +4,7 @@ body {
 		"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-size: 21px;
+	font-size: clamp(100%, 1.1rem, 1.1rem);
 	color: #181818;
 	-webkit-transition: all 0.25s;
 	-moz-transition: all 0.25s;
@@ -21,6 +21,10 @@ code {
 
 h1, h2, h3, h4 {
 	text-align: center;
+}
+
+h1 {
+	font-size: clamp(100%, 10vw, 4rem);
 }
 
 a {

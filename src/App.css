@@ -1,0 +1,131 @@
+/* For the stupid navbar */
+.nav-links.animate {
+	justify-items: center;
+	grid-template-columns: 2fr 0fr;
+	font-size: 95%;
+}
+
+.nav {
+	box-shadow: 0 2px 25px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 0%) !important;
+	height: 60px !important;
+}
+
+#root > div > nav > div > span.nav-links__group.left > a:hover {
+	background-color: rgba(0, 132, 255, 0.05);
+	border-bottom: 2px solid #405db4;
+	opacity: 0.8;
+}
+
+#root > div > nav > div > span.nav-links__group.left > a {
+	transition: all 0.25s;
+	padding: 7px;
+}
+
+/* ========= Scifi Button ========= */
+.scifi-button {
+	border: none;
+	background-color: #49c5ff;
+	border-radius: 5px;
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	padding: 15px 30px;
+	display: block;
+	margin: 0 auto;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 500;
+	font-size: 1em;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 4px 12px #49c5ff;
+}
+
+.scifi-button:before {
+	content: "";
+	display: block;
+	border-radius: 3px;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 50%;
+	right: 50%;
+	background-color: #ffffff;
+	border-left: 2px solid rgba(255, 255, 255, 0.8);
+	border-right: 2px solid rgba(255, 255, 255, 0.8);
+	opacity: 0;
+	transition: all 0.3s;
+	transition-delay: 0.3s;
+	-webkit-transition: all 0.3s;
+	-webkit-transition-delay: 0.3s;
+}
+
+.scifi-button:hover {
+	color: #ffffff;
+	-webkit-animation: flashText 0.5s;
+	animation: flashText 0.5s;
+}
+
+.scifi-button:hover:before {
+	left: 12px;
+	right: 12px;
+	background-color: rgba(255, 255, 255, 0.1);
+	opacity: 0.8;
+}
+
+.scifi-button:active:before {
+	background-color: rgba(255, 255, 255, 0.3);
+	opacity: 1;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+/* Scifi Button Flash Text Animation */
+@-webkit-keyframes flashText {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: transparent;
+	}
+	100% {
+		color: #fff;
+	}
+}
+
+@keyframes flashText {
+	0% {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	50% {
+		color: transparent;
+	}
+	100% {
+		color: #fff;
+	}
+}
+
+/* ========= Center Align Icons ========= */
+.icon {
+	vertical-align: middle;
+}
+
+#social-media-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 30%;
+	margin: auto;
+	margin-top: 1.5rem;
+}
+
+/* ========= Setting Margin for CS Card ========= */
+#CS-Card > * {
+	margin: 0.3vh;
+}
+
+/* ========= Center Align Paragraph for Achievements ========= */
+#Achievements {
+	text-align: center;
+}

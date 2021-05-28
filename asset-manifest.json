@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d0b86cea.chunk.css",
+    "main.js": "/static/js/main.f934754f.chunk.js",
+    "main.js.map": "/static/js/main.f934754f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9ad569c8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9ad569c8.js.map",
+    "static/css/2.234490a8.chunk.css": "/static/css/2.234490a8.chunk.css",
+    "static/js/2.1936d2cc.chunk.js": "/static/js/2.1936d2cc.chunk.js",
+    "static/js/2.1936d2cc.chunk.js.map": "/static/js/2.1936d2cc.chunk.js.map",
+    "static/js/3.cca3ab52.chunk.js": "/static/js/3.cca3ab52.chunk.js",
+    "static/js/3.cca3ab52.chunk.js.map": "/static/js/3.cca3ab52.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.234490a8.chunk.css.map": "/static/css/2.234490a8.chunk.css.map",
+    "static/css/main.d0b86cea.chunk.css.map": "/static/css/main.d0b86cea.chunk.css.map",
+    "static/js/2.1936d2cc.chunk.js.LICENSE.txt": "/static/js/2.1936d2cc.chunk.js.LICENSE.txt",
+    "static/media/AboutMe.1ba0cd5d.jpeg": "/static/media/AboutMe.1ba0cd5d.jpeg",
+    "static/media/CSImage.64313d8b.webp": "/static/media/CSImage.64313d8b.webp",
+    "static/media/GT.f9eab5c1.jpg": "/static/media/GT.f9eab5c1.jpg",
+    "static/media/bg.fd0ed27c.webp": "/static/media/bg.fd0ed27c.webp",
+    "static/media/education.ea389a62.webp": "/static/media/education.ea389a62.webp",
+    "static/media/logo.0f7f0489.png": "/static/media/logo.0f7f0489.png",
+    "static/media/index.css": "/static/media/nunito-vietnamese-400-normal.8afa535b.woff2",
+    "static/media/resume.f34ae20d.pdf": "/static/media/resume.f34ae20d.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ad569c8.js",
+    "static/css/2.234490a8.chunk.css",
+    "static/js/2.1936d2cc.chunk.js",
+    "static/css/main.d0b86cea.chunk.css",
+    "static/js/main.f934754f.chunk.js"
+  ]
+}

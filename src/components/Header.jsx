@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
  */
 function Header(props) {
 	return (
-		<div id="header">
+		<div id={ props.id} className="header" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
 			<div className="caption">
 				<p id="title">{props.caption}</p>
 				<p id="subtitle">{props.subtitle}</p>

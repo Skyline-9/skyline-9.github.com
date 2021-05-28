@@ -1,5 +1,5 @@
-#header {
-	background-image: url("/src/images/bg.webp");
+.header {
+	/* background-image: url("/src/images/bg.webp"); */
 	position: relative;
 	opacity: 0.95;
 	background-attachment: fixed;

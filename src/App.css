@@ -120,6 +120,12 @@
 	margin-top: 1.5rem;
 }
 
+/* ========= Setting Margin for CS Card ========= */
 #CS-Card > * {
 	margin: 0.3vh;
+}
+
+/* ========= Center Align Paragraph for Achievements ========= */
+#Achievements {
+	text-align: center;
 }

@@ -9,6 +9,10 @@ import ReactTypingEffect from "react-typing-effect";
 import Logo from "./images/logo.png";
 import AboutMe from "./images/AboutMe.jpeg";
 import resume from "./resume.pdf";
+import CSImage from "./images/CSImage.webp";
+import bg from "./images/bg.webp";
+import Education from "./images/education.webp";
+import GT from "./images/GT.jpg";
 
 //Icons
 import HomeIcon from "@material-ui/icons/Home";
@@ -37,10 +41,9 @@ const leftLinks = (
 		<a href="#CS">
 			<DesktopWindowsIcon className="icon" /> Computer Science
 		</a>
-		<a href="#null">
+		<a href="#Education">
 			<SchoolIcon className="icon" /> Education
 		</a>
-		<a href="#null">Other</a>
 	</>
 );
 
@@ -50,13 +53,24 @@ const onResumeClick = () => {
 };
 
 //Typewriter
-const typewriter = (
+const headerTypewriter = (
 	<ReactTypingEffect
 		className="typewriter"
 		text={[
 			"Salutations, I am Richard, an undergraduate student researcher at Georgia Tech College of Computing.",
 			"Welcome to my personal website.",
 			"I hope you find something interesting here!",
+		]}
+		speed="90"
+		eraseSpeed="20"
+	/>
+);
+
+const educationTypewriter = (
+	<ReactTypingEffect
+		className="typewriter"
+		text={[
+			"Go Jackets!"
 		]}
 		speed="90"
 		eraseSpeed="20"
@@ -115,9 +129,14 @@ function App() {
 	return (
 		<div>
 			<Navbar brand={navBrand} leftLinks={leftLinks} shouldAnimate={true} shouldHideOnScroll={false} />
-			<Header caption="Richard Luo's Website" subtitle="Making Dreams Come True Since 2002" />
+			<Header
+				caption="Richard Luo's Website"
+				subtitle="Making Dreams Come True Since 2002"
+				backgroundImage={bg}
+				id="header"
+			/>
 			<HighlightCard
-				typewriter={typewriter}
+				typewriter={headerTypewriter}
 				title="About Me"
 				content={
 					<p>
@@ -160,14 +179,54 @@ function App() {
 						</p>
 						<br />
 						<p>
-							I'm currently researching privacy-preserving biometrics under the supervision of Dr. Wenke
-							Lee and Erkam Uzun and building applications for remote privacy-preserving biometric
-							authentication and recognition schemes.
+							Researching privacy-preserving biometric under the supervision of Dr. Wenke Lee and Erkam
+							Uzun. Built applications with React.js/Tensorflow.js for remote biometric authentication
+							using deep learning recognition schemes to bridge deep learning inferences with standard
+							privacy-preserving primitives like fuzzy extractors.
 						</p>
 					</div>
 				}
 				alt="Picture of Me"
-				imageSrc={AboutMe}
+				imageSrc={CSImage}
+			/>
+			<h2>Achievements</h2>
+			<p id="Achievements">
+				CSAW CTF Finalist Qualifier
+				<br /> CUCTF 2nd Place <br />
+				BSidesBosCTF Top 1% Worldwide <br />
+				Stanford Programming Contest (ProCo) 1st Place <br />
+				CMU picoCTF - Top 3.5% International <br />
+				United States of America Computing Olympiad (USACO) - Gold <br />
+				Harker Programming Invitational 3rd Place
+			</p>
+
+			<Header caption="Education" backgroundImage={Education} id="Education" />
+			<HighlightCard
+				title="Education"
+				typewriter={educationTypewriter}
+				content={
+					<div id="CS-Card">
+						<b>🐝 Georgia Institute of Technology</b>
+						<br />
+						<p>
+							<i>Computer Science Major | GPA: 4.0</i>
+						</p>
+						<p>
+							<i>August 2020 - Present</i>
+						</p>
+						<br />
+						<b>Relevant Courses</b>
+						<p>
+							Linear Algebra<br />
+							Introduction to Discrete Mathematics<br />
+							Multivaraible Calculus<br />
+							Intro to OOP<br />
+							Intro to Data Structures and Algorithms<br />
+						</p>
+					</div>
+				}
+				alt="Picture of Me"
+				imageSrc={GT}
 			/>
 		</div>
 	);

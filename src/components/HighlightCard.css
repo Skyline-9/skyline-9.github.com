@@ -28,6 +28,12 @@
 	height: auto;
 	object-fit: cover;
 	float: left;
+	border-radius: 1%;
+	transition: all 0.3s;
+}
+
+.card-image:hover {
+	box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-content {

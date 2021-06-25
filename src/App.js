@@ -44,6 +44,9 @@ const leftLinks = (
 		<a href="#Education">
 			<SchoolIcon className="icon" /> Education
 		</a>
+		<a href="#Projects">
+			<SchoolIcon className="icon" /> Education
+		</a>
 	</>
 );
 
@@ -67,14 +70,7 @@ const headerTypewriter = (
 );
 
 const educationTypewriter = (
-	<ReactTypingEffect
-		className="typewriter"
-		text={[
-			"Go Jackets!"
-		]}
-		speed="90"
-		eraseSpeed="20"
-	/>
+	<ReactTypingEffect className="typewriter" text={["Go Jackets!"]} speed="90" eraseSpeed="20" />
 );
 
 /* ==== useWindowSize hook for finding viewport dimensions */
@@ -217,11 +213,49 @@ function App() {
 						<br />
 						<b>Relevant Courses</b>
 						<p>
-							Linear Algebra<br />
-							Introduction to Discrete Mathematics<br />
-							Multivaraible Calculus<br />
-							Intro to OOP<br />
-							Intro to Data Structures and Algorithms<br />
+							Linear Algebra
+							<br />
+							Introduction to Discrete Mathematics
+							<br />
+							Multivaraible Calculus
+							<br />
+							Intro to OOP
+							<br />
+							Intro to Data Structures and Algorithms
+							<br />
+						</p>
+					</div>
+				}
+				alt="Picture of Me"
+				imageSrc={GT}
+			/>
+
+			<Header caption="Projects" backgroundImage={Education} id="Projects" />
+			<HighlightCard
+				title="Projects"
+				content={
+					<div id="CS-Card">
+						<b>🐝 Georgia Institute of Technology</b>
+						<br />
+						<p>
+							<i>Computer Science Major | GPA: 4.0</i>
+						</p>
+						<p>
+							<i>August 2020 - Present</i>
+						</p>
+						<br />
+						<b>Relevant Courses</b>
+						<p>
+							Linear Algebra
+							<br />
+							Introduction to Discrete Mathematics
+							<br />
+							Multivaraible Calculus
+							<br />
+							Intro to OOP
+							<br />
+							Intro to Data Structures and Algorithms
+							<br />
 						</p>
 					</div>
 				}

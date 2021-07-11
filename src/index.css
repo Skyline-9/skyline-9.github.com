@@ -9,6 +9,8 @@ body {
 	-webkit-transition: all 0.25s;
 	-moz-transition: all 0.25s;
 	transition: all 0.25s;
+
+	text-align: center;
 }
 
 html {

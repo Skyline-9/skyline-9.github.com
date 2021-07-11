@@ -125,7 +125,7 @@
 	margin: 0.3vh;
 }
 
-/* ========= Center Align Paragraph for Achievements ========= */
-#Achievements {
-	text-align: center;
+.extra-text {
+	width: 70%;
+	margin: auto;
 }

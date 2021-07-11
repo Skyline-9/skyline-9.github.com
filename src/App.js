@@ -13,6 +13,8 @@ import CSImage from "./images/CSImage.webp";
 import bg from "./images/bg.webp";
 import Education from "./images/education.webp";
 import GT from "./images/GT.jpg";
+import Projects from "./images/projects.webp";
+import Github from "./images/github.jpg";
 
 //Icons
 import HomeIcon from "@material-ui/icons/Home";
@@ -21,6 +23,7 @@ import LinkIcon from "@material-ui/icons/Link";
 import SchoolIcon from "@material-ui/icons/School";
 import EmailIcon from "@material-ui/icons/Email";
 import CodeIcon from "@material-ui/icons/Code";
+import BuildIcon from "@material-ui/icons/Build";
 
 //Styling
 import "./App.css";
@@ -45,7 +48,7 @@ const leftLinks = (
 			<SchoolIcon className="icon" /> Education
 		</a>
 		<a href="#Projects">
-			<SchoolIcon className="icon" /> Education
+			<BuildIcon className="icon" /> Projects
 		</a>
 	</>
 );
@@ -165,13 +168,13 @@ function App() {
 				title="Experience"
 				content={
 					<div id="CS-Card">
-						<b>🥼 Undergraduate Student Researcher</b>
+						<b>Security Analyst</b>
 						<br />
 						<p>
-							<i>Georgia Institute of Technology College of Computing</i>
+							<i>Georgia Institute of Technology</i>
 						</p>
 						<p>
-							<i>January 2021 - Present</i>
+							<i>June 2021 - Present</i>
 						</p>
 						<br />
 						<p>
@@ -185,8 +188,23 @@ function App() {
 				alt="Picture of Me"
 				imageSrc={CSImage}
 			/>
+
+			<h2>🥼 Undergraduate Research</h2>
+			<p>
+				<i>Georgia Institute of Technology College of Computing</i>
+				<br />
+				<i>January 2021 - Present</i>
+				<br />
+			</p>
+			<p className="extra-text">
+				Researching privacy-preserving biometric under the supervision of Dr. Wenke Lee and Erkam Uzun. Built
+				applications with React.js/Tensorflow.js for remote biometric authentication using deep learning
+				recognition schemes to bridge deep learning inferences with standard privacy-preserving primitives like
+				fuzzy extractors.
+			</p>
+
 			<h2>Achievements</h2>
-			<p id="Achievements">
+			<p className="extra-text">
 				CSAW CTF Finalist Qualifier
 				<br /> CUCTF 2nd Place <br />
 				BSidesBosCTF Top 1% Worldwide <br />
@@ -195,6 +213,7 @@ function App() {
 				United States of America Computing Olympiad (USACO) - Gold <br />
 				Harker Programming Invitational 3rd Place
 			</p>
+			<br />
 
 			<Header caption="Education" backgroundImage={Education} id="Education" />
 			<HighlightCard
@@ -230,37 +249,24 @@ function App() {
 				imageSrc={GT}
 			/>
 
-			<Header caption="Projects" backgroundImage={Education} id="Projects" />
+			<Header caption="Projects" backgroundImage={Projects} id="Projects" />
 			<HighlightCard
 				title="Projects"
 				content={
 					<div id="CS-Card">
-						<b>🐝 Georgia Institute of Technology</b>
-						<br />
+						<b>
+							GoodbAI <a href="https://github.com/Skyline-9/GoodbAI">[Link to GitHub]</a>
+						</b>
 						<p>
-							<i>Computer Science Major | GPA: 4.0</i>
-						</p>
-						<p>
-							<i>August 2020 - Present</i>
-						</p>
-						<br />
-						<b>Relevant Courses</b>
-						<p>
-							Linear Algebra
-							<br />
-							Introduction to Discrete Mathematics
-							<br />
-							Multivaraible Calculus
-							<br />
-							Intro to OOP
-							<br />
-							Intro to Data Structures and Algorithms
-							<br />
+							Using deep learning and OpenAI's GPT-2, GoodbAI aims to clone the natural language of a
+							user/person. Thefirst model was trained on Kobe Bryant's tweets, web-scraped using TWINT.
+							For dataset based on tweets,GoodbAI is able to recognize handles (@user), emojis, and
+							hashtags.
 						</p>
 					</div>
 				}
-				alt="Picture of Me"
-				imageSrc={GT}
+				alt="Check out my GitHub!"
+				imageSrc={Github}
 			/>
 		</div>
 	);

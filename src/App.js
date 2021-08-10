@@ -13,8 +13,6 @@ import CSImage from "./images/CSImage.webp";
 import bg from "./images/bg.webp";
 import Education from "./images/education.webp";
 import GT from "./images/GT.jpg";
-import Projects from "./images/projects.webp";
-import Github from "./images/github.jpg";
 
 //Icons
 import HomeIcon from "@material-ui/icons/Home";
@@ -23,7 +21,6 @@ import LinkIcon from "@material-ui/icons/Link";
 import SchoolIcon from "@material-ui/icons/School";
 import EmailIcon from "@material-ui/icons/Email";
 import CodeIcon from "@material-ui/icons/Code";
-import BuildIcon from "@material-ui/icons/Build";
 
 //Styling
 import "./App.css";
@@ -47,16 +44,8 @@ const leftLinks = (
 		<a href="#Education">
 			<SchoolIcon className="icon" /> Education
 		</a>
-		<a href="#Projects">
-			<BuildIcon className="icon" /> Projects
-		</a>
 	</>
 );
-
-//Resume
-const onResumeClick = () => {
-	window.open(resume);
-};
 
 //Typewriter
 const headerTypewriter = (
@@ -148,9 +137,16 @@ function App() {
 				alt="Picture of Me"
 				imageSrc={AboutMe}
 			/>
-			<button className="scifi-button" onClick={onResumeClick}>
+
+			<button
+				className="scifi-button"
+				onClick={() => {
+					window.open(resume);
+				}}
+			>
 				Check Out My Resume
 			</button>
+
 			<div id="social-media-container">
 				<a href="https://www.linkedin.com/in/richardluorl" target="_blank" rel="noopener noreferrer nofollow">
 					<LinkIcon className="icon" /> LinkedIn
@@ -213,6 +209,17 @@ function App() {
 				United States of America Computing Olympiad (USACO) - Gold <br />
 				Harker Programming Invitational 3rd Place
 			</p>
+
+			<br />
+			<button
+				className="scifi-button"
+				onClick={() => {
+					window.location.href = "https://github.com/Skyline-9";
+				}}
+			>
+				Check Out My Projects
+			</button>
+
 			<br />
 
 			<Header caption="Education" backgroundImage={Education} id="Education" />
@@ -247,26 +254,6 @@ function App() {
 				}
 				alt="Picture of Me"
 				imageSrc={GT}
-			/>
-
-			<Header caption="Projects" backgroundImage={Projects} id="Projects" />
-			<HighlightCard
-				title="Projects"
-				content={
-					<div id="CS-Card">
-						<b>
-							GoodbAI <a href="https://github.com/Skyline-9/GoodbAI">[Link to GitHub]</a>
-						</b>
-						<p>
-							Using deep learning and OpenAI's GPT-2, GoodbAI aims to clone the natural language of a
-							user/person. Thefirst model was trained on Kobe Bryant's tweets, web-scraped using TWINT.
-							For dataset based on tweets,GoodbAI is able to recognize handles (@user), emojis, and
-							hashtags.
-						</p>
-					</div>
-				}
-				alt="Check out my GitHub!"
-				imageSrc={Github}
 			/>
 		</div>
 	);

@@ -164,20 +164,19 @@ function App() {
 				title="Experience"
 				content={
 					<div id="CS-Card">
-						<b>Security Analyst</b>
+						<b>Cybersecurity Analyst</b>
 						<br />
 						<p>
 							<i>Georgia Institute of Technology</i>
 						</p>
 						<p>
-							<i>June 2021 - Present</i>
+							<i>June 2021 - August 2021</i>
 						</p>
 						<br />
 						<p>
-							Researching privacy-preserving biometric under the supervision of Dr. Wenke Lee and Erkam
-							Uzun. Built applications with React.js/Tensorflow.js for remote biometric authentication
-							using deep learning recognition schemes to bridge deep learning inferences with standard
-							privacy-preserving primitives like fuzzy extractors.
+							Identified and mitigated security incidents with FireEye and Palo Alto Networks Cortex
+							XSOAR, triaged incoming threats, and managed network traffic. Reviewed compromised systems
+							and worked alongside system administrators to appropriately mitigate any active threats
 						</p>
 					</div>
 				}
@@ -187,9 +186,23 @@ function App() {
 
 			<h2>🥼 Undergraduate Research</h2>
 			<p>
-				<i>Georgia Institute of Technology College of Computing</i>
+				<b>
+					<i>Robot Autonomy and Interactive Learning (RAIL) Lab @ GT</i>
+				</b>
 				<br />
-				<i>January 2021 - Present</i>
+				<i>August 2021 - Current</i>
+				<br />
+			</p>
+			<p className="extra-text">
+				Working with Dr. Chernova in Robot Autonomy & Interactive Learning (RAIL) Lab @ GT on smart home active
+				assistance
+			</p>
+			<p>
+				<b>
+					<i>Georgia Institute of Technology College of Computing</i>
+				</b>
+				<br />
+				<i>January 2021 - August 2021</i>
 				<br />
 			</p>
 			<p className="extra-text">
@@ -234,6 +247,9 @@ function App() {
 							<i>Computer Science Major | GPA: 4.0</i>
 						</p>
 						<p>
+							<i>Threads: Intelligence/Info & Internetworks</i>
+						</p>
+						<p>
 							<i>August 2020 - Present</i>
 						</p>
 						<br />
@@ -248,6 +264,14 @@ function App() {
 							Intro to OOP
 							<br />
 							Intro to Data Structures and Algorithms
+							<br />
+							Combinatorics
+							<br />
+							Computer Organization and Programming
+							<br />
+							Objects and Design
+							<br />
+							Intro to AI
 							<br />
 						</p>
 					</div>

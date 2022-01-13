@@ -119,11 +119,13 @@ function App() {
         <div>
             <Navbar brand={navBrand} leftLinks={leftLinks} shouldAnimate={true} shouldHideOnScroll={false}/>
             <Header
-                caption="Richard Luo's Website"
+                typewriter={headerTypewriter}
+                caption="Hello, I'm Richard Luo"
                 subtitle="Making Dreams Come True Since 2002"
                 backgroundImage={bg}
                 id="header"
             />
+
             <HighlightCard
                 typewriter={headerTypewriter}
                 title="About Me"

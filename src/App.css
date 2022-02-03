@@ -110,16 +110,6 @@
     vertical-align: middle;
 }
 
-#social-media-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 30%;
-    margin: auto;
-    margin-top: 1.5rem;
-}
-
 /* ========= Setting Margin for CS Card ========= */
 #CS-Card > * {
     margin: 0.3vh;

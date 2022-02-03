@@ -8,8 +8,7 @@ import ReactTypingEffect from "react-typing-effect";
 //Resources
 import Logo from "./images/logo.png";
 import AboutMe from "./images/AboutMe.jpeg";
-import resume from "./resume.pdf";
-import CSImage from "./images/CSImage.webp";
+import Me2 from "./images/me2.jpeg"
 import bg from "./images/bg.webp";
 import Education from "./images/education.webp";
 import GT from "./images/GT.jpg";
@@ -17,10 +16,7 @@ import GT from "./images/GT.jpg";
 //Icons
 import HomeIcon from "@material-ui/icons/Home";
 import DesktopWindowsIcon from "@material-ui/icons/DesktopWindows";
-import LinkIcon from "@material-ui/icons/Link";
 import SchoolIcon from "@material-ui/icons/School";
-import EmailIcon from "@material-ui/icons/Email";
-import CodeIcon from "@material-ui/icons/Code";
 
 //Styling
 import "./App.css";
@@ -58,6 +54,7 @@ const headerTypewriter = (
         ]}
         speed="90"
         eraseSpeed="20"
+        id="header-typewriter"
     />
 );
 
@@ -119,15 +116,17 @@ function App() {
         <div>
             <Navbar brand={navBrand} leftLinks={leftLinks} shouldAnimate={true} shouldHideOnScroll={false}/>
             <Header
-                typewriter={headerTypewriter}
                 caption="Hello, I'm Richard Luo"
                 subtitle="Making Dreams Come True Since 2002"
                 backgroundImage={bg}
                 id="header"
+                params={params}
             />
 
+            <br />
+            {headerTypewriter}
+
             <HighlightCard
-                typewriter={headerTypewriter}
                 title="About Me"
                 content={
                     <p>
@@ -138,54 +137,36 @@ function App() {
                     </p>
                 }
                 alt="Picture of Me"
-                imageSrc={AboutMe}
+                imageSrc={Me2}
             />
 
-            <button
-                className="scifi-button"
-                onClick={() => {
-                    window.open(resume);
-                }}
-            >
-                Check Out My Resume
-            </button>
-
-            <div id="social-media-container">
-                <a href="https://www.linkedin.com/in/richardluorl" target="_blank" rel="noopener noreferrer nofollow">
-                    <LinkIcon className="icon"/> LinkedIn
-                </a>
-                <a href="mailto:luo.richard@gmail.com" target="_blank" rel="noopener noreferrer nofollow">
-                    <EmailIcon className="icon"/> Email
-                </a>
-                <a href="https://github.com/Skyline-9" target="_blank" rel="noopener noreferrer nofollow">
-                    <CodeIcon className="icon"/> GitHub
-                </a>
-            </div>
             <br/>
-            <CustomParticles id="CS" params={params} title="Computer Science"/>
-            <HighlightCard
-                title="Experience"
-                content={
-                    <div id="CS-Card">
-                        <b>Cybersecurity Analyst</b>
-                        <br/>
-                        <p>
-                            <i>Georgia Institute of Technology</i>
-                        </p>
-                        <p>
-                            <i>June 2021 - August 2021</i>
-                        </p>
-                        <br/>
-                        <p>
-                            Identified and mitigated security incidents with FireEye and Palo Alto Networks Cortex
-                            XSOAR, triaged incoming threats, and managed network traffic. Reviewed compromised systems
-                            and worked alongside system administrators to appropriately mitigate any active threats
-                        </p>
-                    </div>
-                }
-                alt="Picture of Me"
-                imageSrc={CSImage}
-            />
+            {/*<CustomParticles id="CS" params={params} title="Computer Science"/>*/}
+            {/*<HighlightCard*/}
+            {/*    title="Experience"*/}
+            {/*    content={*/}
+            {/*        <div id="CS-Card">*/}
+            {/*            <b>Cybersecurity Analyst</b>*/}
+            {/*            <br/>*/}
+            {/*            <p>*/}
+            {/*                <i>Georgia Institute of Technology</i>*/}
+            {/*            </p>*/}
+            {/*            <p>*/}
+            {/*                <i>June 2021 - August 2021</i>*/}
+            {/*            </p>*/}
+            {/*            <br/>*/}
+            {/*            <p>*/}
+            {/*                Identified and mitigated security incidents with FireEye and Palo Alto Networks Cortex*/}
+            {/*                XSOAR, triaged incoming threats, and managed network traffic. Reviewed compromised systems*/}
+            {/*                and worked alongside system administrators to appropriately mitigate any active threats*/}
+            {/*            </p>*/}
+            {/*        </div>*/}
+            {/*    }*/}
+            {/*    alt="Picture of Me"*/}
+            {/*    imageSrc={CSImage}*/}
+            {/*/>*/}
+
+            {/*https://codyhouse.co/gem/vertical-timeline/*/}
 
             <h2>🥼 Undergraduate Research</h2>
             <p>
@@ -238,7 +219,7 @@ function App() {
 
             <br/>
 
-            <Header caption="Education" backgroundImage={Education} id="Education"/>
+            {/*<Header caption="Education" backgroundImage={Education} id="Education"/>*/}
             <HighlightCard
                 title="Education"
                 typewriter={educationTypewriter}

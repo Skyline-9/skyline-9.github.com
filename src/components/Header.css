@@ -6,7 +6,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 70vh;
+    height: 87vh;
 }
 
 .caption {
@@ -56,12 +56,6 @@
     }
 }
 
-#header-typewriter {
-    color: white;
-    font-size: 120%;
-    text-align: center;
-}
-
 .profile-container {
     display: flex;
     align-items: center;
@@ -77,6 +71,7 @@
     text-align: center;
     align-items: center;
     flex-direction: column;
+    margin-right: 10vw;
 }
 
 .profile-picture {
@@ -84,8 +79,8 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 1px 0 0 #fff;
-    width: 15rem;
-    height: 15rem;
+    width: 17rem;
+    height: 17rem;
     margin-left: 100px;
     border-radius: 50%;
 }
@@ -98,6 +93,7 @@
     height: 92%;
     width: 92%;
     background-position: 50%;
+    box-shadow: 0 0 10rem 0 rgba(73, 197, 255, 0.38);
 }
 
 .caption-name {
@@ -110,6 +106,19 @@
     margin: 2rem;
 }
 
+#social-media-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+#social-media-container > a {
+    color: #e5e5e5;
+}
+
 @media only screen and (max-width: 810px) {
     .profile-container {
         flex-direction: column-reverse;
@@ -117,8 +126,11 @@
 
     .profile-picture {
         margin: 60px 0 2rem 0;
-        height: 13rem;
-        width: 13rem;
+        height: 10rem;
+        width: 10rem;
     }
 
+    .profile-details {
+        margin-right: 0;
+    }
 }

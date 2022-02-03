@@ -2,6 +2,10 @@ import "./Header.css";
 import PropTypes from "prop-types";
 import ReactTypingEffect from "react-typing-effect";
 import resume from "../resume.pdf";
+import LinkIcon from "@material-ui/icons/Link";
+import EmailIcon from "@material-ui/icons/Email";
+import CodeIcon from "@material-ui/icons/Code";
+import Particles from "react-particles-js";
 
 /**
  * Parallax header with specified background image and title
@@ -13,23 +17,23 @@ import resume from "../resume.pdf";
 function Header(props) {
     return (
         <div id={props.id} className="header" style={{backgroundImage: `url(${props.backgroundImage})`}}>
-
             <div className="profile-container">
                 <div className="profile-details">
                     <div className="caption">
                         <p id="title">Hello, I'm <span className="caption-name">Richard Luo</span></p>
                         <p id="subtitle">{props.subtitle}</p>
                     </div>
-                    <ReactTypingEffect
-                        id="header-typewriter"
-                        text={[
-                            "ReactJS",
-                            "Welcome to my personal website.",
-                            "I hope you find something interesting here!",
-                        ]}
-                        speed="90"
-                        eraseSpeed="20"
-                    />
+                    <div id="social-media-container">
+                        <a href="https://www.linkedin.com/in/richardluorl" target="_blank" rel="noopener noreferrer nofollow">
+                            <LinkIcon className="icon"/> LinkedIn
+                        </a>
+                        <a href="mailto:luo.richard@gmail.com" target="_blank" rel="noopener noreferrer nofollow">
+                            <EmailIcon className="icon"/> Email
+                        </a>
+                        <a href="https://github.com/Skyline-9" target="_blank" rel="noopener noreferrer nofollow">
+                            <CodeIcon className="icon"/> GitHub
+                        </a>
+                    </div>
                     <div className="caption-buttons">
                         <button
                             className="scifi-button"

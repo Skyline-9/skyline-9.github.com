@@ -8,7 +8,7 @@ function HighlightCard(props) {
 			<br />
 			<br />
 			<div className="card-container">
-				<img className="card-image" src={props.imageSrc} alt={props.alt}></img>
+				<img className="card-image" src={props.imageSrc} alt={props.alt}/>
 				<div className="card-content">
 					<h2>{props.title}</h2>
 					<hr />

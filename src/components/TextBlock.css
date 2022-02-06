@@ -1,0 +1,59 @@
+.textblock {
+    background: #faf9fa;
+    border-radius: 2px;
+    height: auto;
+    position: relative;
+    width: 100%;
+    left: 0;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.textblock-content {
+    width: 60%;
+}
+
+.textblock-content > h2 {
+    color: #444;
+}
+
+.textblock > p, hr {
+    width: 80%;
+    margin: auto;
+}
+
+.textblock-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.textblock-image {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1%;
+    transition: all 0.3s;
+    margin: 1rem;
+}
+
+/* ==== Mobile ==== */
+@media only screen and (max-width: 810px) {
+    .textblock-container {
+        flex-direction: column;
+    }
+
+    .textblock-image {
+        width: 80%;
+        margin: 2rem;
+    }
+
+    .textblock-content {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+/* ==== For top textblock with wave ==== */
+#top-textblock {
+    margin-top: 5rem;
+}

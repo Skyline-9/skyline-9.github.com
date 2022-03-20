@@ -27,11 +27,11 @@ const leftLinks = (
         <a href="#header">
             <HomeIcon className="icon"/> Home
         </a>
-        <a href="#CS">
-            <DesktopWindowsIcon className="icon"/> Computer Science
+        <a href="#top-textblock">
+            <DesktopWindowsIcon className="icon"/> About Me
         </a>
-        <a href="#Education">
-            <SchoolIcon className="icon"/> Education
+        <a href="#portfolio">
+            <SchoolIcon className="icon"/> Portfolio
         </a>
     </>
 );

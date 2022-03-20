@@ -1,10 +1,4 @@
 import "./Header.css";
-import PropTypes from "prop-types";
-import ReactTypingEffect from "react-typing-effect";
-import resume from "../resume.pdf";
-import LinkIcon from "@material-ui/icons/Link";
-import EmailIcon from "@material-ui/icons/Email";
-import CodeIcon from "@material-ui/icons/Code";
 
 /**
  * Parallax header with specified background image and title

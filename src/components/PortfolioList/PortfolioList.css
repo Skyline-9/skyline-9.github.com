@@ -1,0 +1,18 @@
+.portfolioList {
+    font-size: 14px;
+    margin-right: 50px;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.portfolioList.active {
+    background-color: rgba(3, 40, 116, 0.9); /* TODO */
+    color: white;
+}
+
+@media only screen and (max-width: 810px) {
+    .portfolioList {
+        margin-right: 20px;
+    }
+}

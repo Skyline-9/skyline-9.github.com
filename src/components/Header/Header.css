@@ -3,6 +3,7 @@
     height: 335px;
     min-width: 470px;
     min-height: 335px;
+    max-width: 100vw;
     margin: auto;
 }
 
@@ -1431,8 +1432,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at 50%, rgb(3, 40, 116) 0%, rgb(20, 1, 26) 100%);
-    /*background-image: url("/src/images/bg.webp");*/
+    background: radial-gradient(circle at 50%, rgba(3, 40, 116, 0.9) 0%, rgba(20, 1, 26, 0.6) 100%), url("/src/resources/images/bg.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -1449,7 +1449,22 @@ body {
 
 .header {
     overflow: hidden;
-    margin-top: 105%;
+    margin-top: 65%;
+    width: 100vw;
+}
+
+.title > h1 {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    color: #fff;
+}
+
+.caption {
+    width: 80%;
+    margin: auto;
+}
+
+.caption > h1, h2, h3, h4 {
+    color: #fefefe;
 }
 
 *,
@@ -1461,6 +1476,10 @@ body {
 
 @media only screen and (max-width: 810px) {
     .header {
-        margin-top: 400%;
+        margin-top: 500%;
+    }
+
+    .fox {
+        transform: scale(0.7);
     }
 }

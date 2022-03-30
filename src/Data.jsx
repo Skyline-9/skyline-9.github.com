@@ -16,7 +16,7 @@ export const featuredPortfolio = [{
 }, {
     id: 4,
     title: "Sketch2Drawings",
-    img: "https://github.com/Skyline-9/sketch2drawings/raw/main/sample-img/new_model/example5.png",
+    img: "https://github.com/Skyline-9/sketch2drawings/raw/main/sample-img/new_model/example1.png",
     link: "https://github.com/Skyline-9/sketch2drawings",
 }, {
     id: 5,

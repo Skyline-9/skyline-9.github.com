@@ -35,7 +35,7 @@ function Intro(props) {
                             <a id='highlight' href="https://letterboxd.com/TheDarkFox/" target='_target'> movie
                                 list here</a>!
                         </p>
-                        <p><b>Current: </b>Research Assistant @ GT RAIL and Incoming SWE Intern @ UKG</p>
+                        <p><b>Current: </b>Research Assistant @ GT RAIL</p>
                         <div id="social-media-container">
                             <a href="https://www.linkedin.com/in/richardluorl" target="_blank"
                                rel="noopener noreferrer nofollow">

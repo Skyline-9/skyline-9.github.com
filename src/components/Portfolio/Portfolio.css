@@ -44,6 +44,7 @@
 .portfolio > .container > .item > h3 {
     position: absolute;
     font-size: 20px;
+    pointer-events: none;
 }
 
 .portfolio > .container > .item > a {

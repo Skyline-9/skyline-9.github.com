@@ -23,6 +23,11 @@ export const featuredPortfolio = [{
     title: "GoodbAI",
     img: "https://images.unsplash.com/photo-1598018553943-29ace5bf9867?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2410&q=80",
     link: "https://github.com/Skyline-9/GoodbAI",
+}, {
+    id: 6,
+    title: "Reddit Place Script 2022",
+    img: "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/RPlace2022.png/300px-RPlace2022.png",
+    link: "https://github.com/rdeepak2002/reddit-place-script-2022",
 },];
 
 export const webPortfolio = [{

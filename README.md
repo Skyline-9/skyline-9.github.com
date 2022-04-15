@@ -9,4 +9,4 @@ My personal website created using React.js and deployed with [gh-pages](https://
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://choosealicense.com/licenses/mit/)
 
 ## Project Screenshot
-![](https://github.com/Skyline-9/skyline-9.github.com/blob/master/src/images/socialpreview.jpg)
+![](https://raw.githubusercontent.com/Skyline-9/skyline-9.github.com/master/src/resources/images/socialpreview.png)

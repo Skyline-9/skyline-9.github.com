@@ -1,6 +1,7 @@
 import './Experience.css'
 import '../../Data.jsx'
 import gatech from '../../resources/images/experiences/gatech.png'
+import rail from '../../resources/images/experiences/rail.png'
 
 export default function Experience() {
     return (
@@ -8,7 +9,7 @@ export default function Experience() {
             <h1>Experience</h1>
             <div className="experience-card">
                 <div className="experience-image">
-                    <img src={gatech} alt="experience-1"/>
+                    <img src={rail} alt="experience-1"/>
                 </div>
                 <div className="experience-text">
                     <b>Research Assistant</b><br/>

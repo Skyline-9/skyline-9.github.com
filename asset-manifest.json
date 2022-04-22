@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9ae0802.css",
-    "main.js": "/static/js/main.030f5cb5.js",
+    "main.css": "/static/css/main.e0294d95.css",
+    "main.js": "/static/js/main.042f5437.js",
     "static/js/787.9c1e953c.chunk.js": "/static/js/787.9c1e953c.chunk.js",
     "static/media/AboutMe.jpeg": "/static/media/AboutMe.1ba0cd5d37c212b64550.jpeg",
     "static/media/bg.webp": "/static/media/bg.fd0ed27cf5bb23462311.webp",
+    "static/media/logo.png": "/static/media/logo.74fe8be3605f4ae65ba9.png",
     "static/media/nunito-all-400-normal.woff": "/static/media/nunito-all-400-normal.10f26006dac17974a00a.woff",
-    "static/media/logo.png": "/static/media/logo.755ae0ac84d90fcd9b8f.png",
     "static/media/resume.pdf": "/static/media/resume.758afc5e177da052d3f7.pdf",
     "static/media/nunito-latin-400-normal.woff2": "/static/media/nunito-latin-400-normal.6c056c5a7f9e2699fc20.woff2",
     "static/media/nunito-latin-ext-400-normal.woff2": "/static/media/nunito-latin-ext-400-normal.6463a963ac63a01f9c90.woff2",
@@ -14,12 +14,12 @@
     "static/media/nunito-cyrillic-400-normal.woff2": "/static/media/nunito-cyrillic-400-normal.905568dbb5f3dd0cb6c2.woff2",
     "static/media/nunito-vietnamese-400-normal.woff2": "/static/media/nunito-vietnamese-400-normal.6fcc1613cc86e521c28e.woff2",
     "index.html": "/index.html",
-    "main.f9ae0802.css.map": "/static/css/main.f9ae0802.css.map",
-    "main.030f5cb5.js.map": "/static/js/main.030f5cb5.js.map",
+    "main.e0294d95.css.map": "/static/css/main.e0294d95.css.map",
+    "main.042f5437.js.map": "/static/js/main.042f5437.js.map",
     "787.9c1e953c.chunk.js.map": "/static/js/787.9c1e953c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9ae0802.css",
-    "static/js/main.030f5cb5.js"
+    "static/css/main.e0294d95.css",
+    "static/js/main.042f5437.js"
   ]
 }

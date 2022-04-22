@@ -11,6 +11,7 @@ import Navbar from "@acto/react-navbar";
 import HomeIcon from "@material-ui/icons/Home";
 import DesktopWindowsIcon from "@material-ui/icons/DesktopWindows";
 import SchoolIcon from "@material-ui/icons/School";
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 //Images
 import Logo from "./resources/images/logo.png";
@@ -31,8 +32,11 @@ const leftLinks = (
         <a href="#top-textblock">
             <DesktopWindowsIcon className="icon"/> About Me
         </a>
+        <a href="#experience">
+            <SchoolIcon className="icon"/> Experience
+        </a>
         <a href="#portfolio">
-            <SchoolIcon className="icon"/> Portfolio
+            <AssignmentIcon className="icon"/> Portfolio
         </a>
     </>
 );

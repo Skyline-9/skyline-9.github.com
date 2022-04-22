@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Wave from './components/Wave/Wave';
 import Intro from './components/Intro/Intro';
+import Experience from './components/Experience/Experience';
 import Portfolio from "./components/Portfolio/Portfolio";
 import Footer from "./components/Footer/Footer";
 import Navbar from "@acto/react-navbar";
@@ -43,6 +44,7 @@ function App() {
             <Header id="header"/>
             <Wave/>
             <Intro imageSrc={AboutMe}/>
+            <Experience/>
             <Portfolio/>
             <Footer/>
         </div>

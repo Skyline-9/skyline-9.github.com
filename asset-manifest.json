@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.e8d73567.css",
-    "main.js": "/static/js/main.6350ec93.js",
+    "main.js": "/static/js/main.04f79b22.js",
     "static/js/787.9c1e953c.chunk.js": "/static/js/787.9c1e953c.chunk.js",
     "static/media/AboutMe.jpeg": "/static/media/AboutMe.1ba0cd5d37c212b64550.jpeg",
     "static/media/bg.webp": "/static/media/bg.fd0ed27cf5bb23462311.webp",
     "static/media/logo.png": "/static/media/logo.55dc3cd33795d45e6fda.png",
     "static/media/nunito-all-400-normal.woff": "/static/media/nunito-all-400-normal.10f26006dac17974a00a.woff",
-    "static/media/resume.pdf": "/static/media/resume.758afc5e177da052d3f7.pdf",
+    "static/media/resume.pdf": "/static/media/resume.8351aefdfdaa5d498c5a.pdf",
     "static/media/gatech.png": "/static/media/gatech.ca19359fb8993696a51a.png",
     "static/media/ukg.jpeg": "/static/media/ukg.b813a7a9d746128ef30c.jpeg",
     "static/media/rail.png": "/static/media/rail.e6263fb1bc038beca1dd.png",
@@ -18,11 +18,11 @@
     "static/media/nunito-vietnamese-400-normal.woff2": "/static/media/nunito-vietnamese-400-normal.6fcc1613cc86e521c28e.woff2",
     "index.html": "/index.html",
     "main.e8d73567.css.map": "/static/css/main.e8d73567.css.map",
-    "main.6350ec93.js.map": "/static/js/main.6350ec93.js.map",
+    "main.04f79b22.js.map": "/static/js/main.04f79b22.js.map",
     "787.9c1e953c.chunk.js.map": "/static/js/787.9c1e953c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e8d73567.css",
-    "static/js/main.6350ec93.js"
+    "static/js/main.04f79b22.js"
   ]
 }

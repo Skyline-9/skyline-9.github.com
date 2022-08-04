@@ -20,7 +20,7 @@ export default function Experience() {
                         Developed new features as part of Workforce TeleStaff New Product Development Team in Agile lifecycle.
                         Created Angular proof-of-concept for TeleStaff, which improves UI/UX, increases responsiveness, and meets WCAG 2.1 Accessability guidelines.
                         Established reverse proxy to make calls with existing backend and support legacy code.
-                        Presented proof-of-concept to multiple VPs and directors to discuss future company outlooks and product roadmaps Implemented REST APIs using Java Spring Services to support CRUD operations for MSSQL database.
+                        Implemented REST APIs using Java Spring Services to support CRUD operations for MSSQL database.
                     </p>
                 </div>
             </div>

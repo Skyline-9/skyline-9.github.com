@@ -93,7 +93,7 @@ function Header(props) {
             <div className="caption">
                 <h2>Making Dreams Come True Since 2002</h2>
             </div>
-            <button
+            {/* <button
                 className="scifi-button"
                 id="resume-button"
                 onClick={() => {
@@ -101,7 +101,7 @@ function Header(props) {
                 }}
             >
                 Check Out My Resume
-            </button>
+            </button> */}
             <br/>
             <br/>
         </div>

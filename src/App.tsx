@@ -1,24 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
+import "@fontsource/nunito-sans"; // Defaults to weight 400.
+
+// Styling
 import './App.css';
 
+// Components
+import CyberpunkGlitch from "./components/CyberpunkGlitch";
+import ExperienceTimeline from "./components/ExperienceTimeline";
+
 const App = () => {
+
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+            <CyberpunkGlitch/>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <ExperienceTimeline/>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
+            <h2>This is a test</h2>
         </div>
     );
 }

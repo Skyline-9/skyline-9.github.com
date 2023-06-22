@@ -1,0 +1,110 @@
+.intro-card {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    background: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem auto;
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+}
+
+.intro-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+    filter: blur(30px);
+}
+
+.intro-card b {
+    position: absolute;
+    inset: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.intro-card-content {
+    z-index: 3;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+.textblock-image {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1%;
+    transition: all 0.3s;
+    margin: 1rem;
+}
+
+.textblock-content {
+    width: 60%;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+#social-media-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 1.5rem auto auto;
+}
+
+#social-media-container > a {
+    text-decoration: none;
+    color: var(--ctp-mocha-peach);
+    background-image: linear-gradient(90deg, var(--ctp-mocha-yellow), var(--ctp-mocha-peach));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#highlight {
+    background-image: linear-gradient(90deg, var(--ctp-mocha-yellow), var(--ctp-mocha-peach));
+    background-repeat: no-repeat;
+    background-position: 4px bottom;
+    background-size: 100% 2px;
+    text-decoration: none;
+    color: var(--ctp-mocha-lavender);
+}
+
+/* ==== Mobile ==== */
+@media only screen and (max-width: 810px) {
+    .intro-card {
+        width: 90%;
+    }
+
+    .intro-card-content {
+        flex-direction: column;
+    }
+
+    .textblock-image {
+        width: 80%;
+        margin: auto;
+    }
+
+    .textblock-content {
+        width: 95%;
+        margin: auto;
+    }
+}

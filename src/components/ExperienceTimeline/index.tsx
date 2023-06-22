@@ -1,77 +1,142 @@
+// Components
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+
 // Styling
 import './style.css';
 
+// Assets
+import AWS from "../../assets/images/aws.jpg";
+import UKG from "../../assets/images/ukg.png";
+import RAIL from "../../assets/images/rail.png";
+import GT from "../../assets/images/gt.jpg";
+
 const ExperienceTimeline = () => {
+
+    const ctpGreen = getComputedStyle(document.documentElement).getPropertyValue('--ctp-mocha-green').trim();
+    const ctpText = getComputedStyle(document.documentElement).getPropertyValue('--ctp-mocha-text').trim();
+    const ctpPeach = getComputedStyle(document.documentElement).getPropertyValue('--ctp-mocha-peach').trim();
+
     return (
-        <section id="timeline">
-
-            <div className="tl-item">
-                <div className="tl-bg" style={{backgroundImage: 'url(https://placeimg.com/801/801/nature)'}}></div>
-                <div className="tl-year">
-                    <p>Ultimate Kronos Group</p>
-                </div>
-                <div className="tl-content">
-                    <h1>Software Engineering Intern</h1>
-                    <p>Developed new features as part of Workforce TeleStaff New Product Development Team in Agile
-                        lifecycle. Created Angular proof-of-concept for TeleStaff, which improves UI/UX, increases
-                        responsiveness, and meets WCAG 2.1 Accessability guidelines. Established reverse proxy to make
-                        calls with existing backend and support legacy code. Implemented REST APIs using Java Spring
-                        Services to support CRUD operations for MSSQL database.</p>
-                </div>
-
-            </div>
-
-            <div className="tl-item">
-
-                <div className="tl-bg" style={{backgroundImage: "url(https://placeimg.com/802/802/nature)"}}></div>
-
-                <div className="tl-year">
-                    <p className="f2">Georgia Tech RAIL Lab</p>
-                </div>
-
-                <div className="tl-content">
-                    <h1 className="f3 text--accent ttu">Research Assistant</h1>
-                    <p>Worked with Dr. Chernova in Georgia Tech's Robot Autonomy & Interactive Learning (RAIL) Lab on
-                        smart-home active assistance based on deep-learning sensor prediction.</p>
-                </div>
-
-            </div>
-
-            <div className="tl-item">
-                <div className="tl-bg" style={{backgroundImage: "url(https://placeimg.com/803/803/nature)"}}></div>
-                <div className="tl-year">
-                    <p className="f2">Georgia Tech Security Operations Center</p>
-                </div>
-
-                <div className="tl-content">
-                    <h1 className="f3 text--accent ttu">Cybersecurity Analyst</h1>
-                    <p>Identified and mitigated security incidents with FireEye and Palo Alto Networks Cortex XSOAR,
-                        triaged incoming threats, and managed network traffic. Reviewed compromised systems and worked
-                        alongside system administrators to appropriately mitigate any active threats.</p>
-                </div>
-
-            </div>
-
-            <div className="tl-item">
-                <div className="tl-bg" style={{backgroundImage: "url(https://placeimg.com/800/800/nature)"}}></div>
-                <div className="tl-year">
-                    <p className="f2">Georgia Tech Research Institute</p>
-                </div>
-
-                <div className="tl-content">
-                    <h1 className="f3 text--accent ttu">Undergraduate Researcher</h1>
-                    <p>Researched privacy-preserving biometric under the supervision of Dr. Wenke Lee. Built
-                        applications using React.js/Tensorflow.js with remote biometric authentication using deep
-                        learning recognition schemes to bridge deep learning inferences with standard privacy-preserving
-                        primitives like fuzzy extractors. Implemented OAuth 2.0 Authorization/Identity Server for Single
-                        Sign On (SSO) using Java/SQL backend</p>
-
-                    <p>🛠 Tech Stack: HTML, CSS, Typescript, Node.js, React, Tensorflow.js, MySQL, Apache Tomcat</p>
-                </div>
-
-            </div>
-        </section>
-
+        <div className="experience-timeline">
+            <h1>💼 Work Experience</h1>
+            <Timeline position="alternate">
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{m: 'auto 0'}}
+                        align="right"
+                        variant="body2"
+                        color={`${ctpText}`}
+                    >
+                        May 2023 - August 2023
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector/>
+                        <TimelineDot sx={{
+                            backgroundColor: `${ctpPeach}`
+                        }}/>
+                        <TimelineConnector/>
+                    </TimelineSeparator>
+                    <TimelineContent sx={{py: '12px', px: 2}}>
+                        <h2>Amazon Web Services (AWS)</h2>
+                        <h3>Software Engineer Intern</h3>
+                        <img width={200} src={AWS} alt={'aws'}/>
+                        <p>CloudFront Platforms Team</p>
+                        <p>Designed robust, performant, and highly scalable system to address host provisioning and
+                            metadata collection across tens of thousands of worldwide hosts using AWS serverless
+                            microservicesCloudFront</p>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{m: 'auto 0'}}
+                        align="right"
+                        variant="body2"
+                        color={`${ctpText}`}
+                    >
+                        May 2022 - August 2023
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector/>
+                        <TimelineDot sx={{
+                            backgroundColor: `${ctpGreen}`
+                        }}/>
+                        <TimelineConnector/>
+                    </TimelineSeparator>
+                    <TimelineContent sx={{py: '12px', px: 2}}>
+                        <h2>Ultimate Kronos Group (UKG)</h2>
+                        <h3>Software Engineer Intern</h3>
+                        <img width={200} src={UKG} alt={'aws'}/>
+                        <p>Workforce TeleStaff New Product Development Team</p>
+                        <p>Developed new features as part of Workforce TeleStaff New Product Development Team in Agile
+                            lifecycle. Created Angular proof-of-concept for TeleStaff, which improves UI/UX, increases
+                            responsiveness, and meets WCAG 2.1 Accessability guidelines. Established reverse proxy to
+                            make calls with existing backend and support legacy code. Implemented REST APIs using Java
+                            Spring Services to support CRUD operations for MSSQL database.</p>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{m: 'auto 0'}}
+                        align="right"
+                        variant="body2"
+                        color={`${ctpText}`}
+                    >
+                        August 2021 - August 2022
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector/>
+                        <TimelineDot sx={{
+                            backgroundColor: `${ctpPeach}`
+                        }}/>
+                        <TimelineConnector/>
+                    </TimelineSeparator>
+                    <TimelineContent sx={{py: '12px', px: 2}}>
+                        <h2>Georgia Tech Robotic Autonomy and Interactive Learning (RAIL) Lab</h2>
+                        <h3>Research Assistant</h3>
+                        <img width={200} src={RAIL} alt={'rail'}/>
+                        <p>Under Dr. Chernova</p>
+                        <p>Designed IRB approved study to gather temporal sensor data from a smarthome using human
+                            volunteers. Used a variety of temporal ML techniques (e.g. bi-directional LSTM, RNNs) to
+                            facilitate smart-home active assistance based on deep-learning
+                            sensor prediction.</p>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{m: 'auto 0'}}
+                        align="right"
+                        variant="body2"
+                        color={`${ctpText}`}
+                    >
+                        January 2021 - August 2021
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector/>
+                        <TimelineDot sx={{
+                            backgroundColor: `${ctpGreen}`
+                        }}/>
+                        <TimelineConnector/>
+                    </TimelineSeparator>
+                    <TimelineContent sx={{py: '12px', px: 2}}>
+                        <h2>Georgia Tech Research Institute</h2>
+                        <h3>Undergraduate Researcher</h3>
+                        <img width={200} src={GT} alt={'gtcoc'}/>
+                        <p>Under Dr. Wenke Lee</p>
+                        <p>Researched privacy-preserving biometric under the supervision of Dr. Wenke Lee. Built
+                            applications using React.js/Tensorflow.js with remote biometric authentication using deep
+                            learning recognition schemes to bridge deep learning inferences with standard
+                            privacy-preserving primitives like fuzzy extractors. Implemented OAuth 2.0
+                            Authorization/Identity Server for Single Sign On (SSO) using Java/SQL backend.</p>
+                    </TimelineContent>
+                </TimelineItem>
+            </Timeline>
+        </div>
     );
 }
 

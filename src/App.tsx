@@ -7,43 +7,21 @@ import './App.css';
 // Components
 import CyberpunkGlitch from "./components/CyberpunkGlitch";
 import ExperienceTimeline from "./components/ExperienceTimeline";
+import SakanaReact from 'sakana-react';
+import IntroCard from "./components/IntroCard";
 
 const App = () => {
 
     return (
         <div className="App">
             <CyberpunkGlitch/>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
+            <IntroCard />
             <ExperienceTimeline/>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
-            <h2>This is a test</h2>
+            <div className="sakana">
+                <SakanaReact className="sakana"
+                             showControler={false}/>
+                <p className="sakana-subtext"><i>Drag me around!</i></p>
+            </div>
         </div>
     );
 }

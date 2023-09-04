@@ -7,8 +7,9 @@ import './App.css';
 // Components
 import CyberpunkGlitch from "./components/CyberpunkGlitch";
 import ExperienceTimeline from "./components/ExperienceTimeline";
-import SakanaReact from 'sakana-react';
 import IntroCard from "./components/IntroCard";
+import Projects from "./components/Projects";
+import SakanaReact from 'sakana-react';
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
             <CyberpunkGlitch/>
             <IntroCard />
             <ExperienceTimeline/>
+            {/*<Projects />*/}
             <div className="sakana">
                 <SakanaReact className="sakana"
                              showControler={false}/>

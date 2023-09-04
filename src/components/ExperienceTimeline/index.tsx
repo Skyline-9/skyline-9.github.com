@@ -47,9 +47,13 @@ const ExperienceTimeline = () => {
                         <h3>Software Engineer Intern</h3>
                         <img width={200} src={AWS} alt={'aws'}/>
                         <p>CloudFront Platforms Team</p>
-                        <p>Designed robust, performant, and highly scalable system to address host provisioning and
-                            metadata collection across tens of thousands of worldwide hosts using AWS serverless
-                            microservicesCloudFront</p>
+                        <p>Redesigned CloudFront's worldwide host/server inventory system to be more resilient,
+                            performant, and scalable across tens of thousand worldwide locations. Improved critical
+                            endpoint speed by 47% using concurrency to eliminate timeout issues and increase service
+                            availability and host recovery abilities. Eliminated throttling issues by reducing AWS API
+                            calls by 50%. Improved service visibility for operators by creating a dashboard that
+                            monitors error rates, CloudWatch alarms, and other key metrics
+                        </p>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>

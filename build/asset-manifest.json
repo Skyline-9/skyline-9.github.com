@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.298c8d12.css",
-    "main.js": "/static/js/main.e26af3d5.js",
+    "main.js": "/static/js/main.709de0a2.js",
     "static/js/787.2d5e7265.chunk.js": "/static/js/787.2d5e7265.chunk.js",
     "static/media/gt.jpg": "/static/media/gt.132adadc5eb9d06491ad.jpg",
     "static/media/me.jpg": "/static/media/me.1ba0cd5d37c212b64550.jpg",
+    "static/media/richard_luo_resume.pdf": "/static/media/richard_luo_resume.77a3d18b54a5c15a8271.pdf",
     "static/media/nunito-sans-all-400-normal.woff": "/static/media/nunito-sans-all-400-normal.6829d5bb0386828b00bc.woff",
-    "static/media/resume_richard_luo.pdf": "/static/media/resume_richard_luo.83b6922a1250d84e2015.pdf",
     "static/media/aws.jpg": "/static/media/aws.edd1918aef2dd65a9891.jpg",
     "static/media/ukg.png": "/static/media/ukg.a075e15aed525b0ed287.png",
     "static/media/nunito-sans-latin-400-normal.woff2": "/static/media/nunito-sans-latin-400-normal.5c4de521b020a610c232.woff2",
@@ -17,11 +17,11 @@
     "static/media/nunito-sans-vietnamese-400-normal.woff2": "/static/media/nunito-sans-vietnamese-400-normal.d68ebb752ccf1a0cdcef.woff2",
     "index.html": "/index.html",
     "main.298c8d12.css.map": "/static/css/main.298c8d12.css.map",
-    "main.e26af3d5.js.map": "/static/js/main.e26af3d5.js.map",
+    "main.709de0a2.js.map": "/static/js/main.709de0a2.js.map",
     "787.2d5e7265.chunk.js.map": "/static/js/787.2d5e7265.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.298c8d12.css",
-    "static/js/main.e26af3d5.js"
+    "static/js/main.709de0a2.js"
   ]
 }

@@ -11,10 +11,10 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import './style.css';
 
 // Assets
-import AWS from "../../assets/images/aws.jpg";
-import UKG from "../../assets/images/ukg.png";
-import RAIL from "../../assets/images/rail.png";
-import GT from "../../assets/images/gt.jpg";
+import AWS from "../../assets/images/aws.webp";
+import UKG from "../../assets/images/ukg.webp";
+import RAIL from "../../assets/images/rail.webp";
+import GT from "../../assets/images/gt.webp";
 
 const ExperienceTimeline = () => {
 
@@ -45,7 +45,7 @@ const ExperienceTimeline = () => {
                     <TimelineContent sx={{py: '12px', px: 2}}>
                         <h2>Amazon Web Services (AWS)</h2>
                         <h3>Software Engineer Intern</h3>
-                        <img width={200} src={AWS} alt={'aws'}/>
+                        <img width={200} src={AWS} alt={'aws'} loading="lazy"/>
                         <p>CloudFront Platforms Team</p>
                         <p>Redesigned CloudFront's worldwide host/server inventory system to be more resilient,
                             performant, and scalable across tens of thousand worldwide locations. Improved critical
@@ -75,7 +75,7 @@ const ExperienceTimeline = () => {
                     <TimelineContent sx={{py: '12px', px: 2}}>
                         <h2>Ultimate Kronos Group (UKG)</h2>
                         <h3>Software Engineer Intern</h3>
-                        <img width={200} src={UKG} alt={'aws'}/>
+                        <img width={200} src={UKG} alt={'ukg'} loading="lazy"/>
                         <p>Workforce TeleStaff New Product Development Team</p>
                         <p>Developed new features as part of Workforce TeleStaff New Product Development Team in Agile
                             lifecycle. Created Angular proof-of-concept for TeleStaff, which improves UI/UX, increases
@@ -103,7 +103,7 @@ const ExperienceTimeline = () => {
                     <TimelineContent sx={{py: '12px', px: 2}}>
                         <h2>Georgia Tech Robotic Autonomy and Interactive Learning (RAIL) Lab</h2>
                         <h3>Research Assistant</h3>
-                        <img width={200} src={RAIL} alt={'rail'}/>
+                        <img width={200} src={RAIL} alt={'rail'} loading="lazy"/>
                         <p>Under Dr. Chernova</p>
                         <p>Designed IRB approved study to gather temporal sensor data from a smarthome using human
                             volunteers. Used a variety of temporal ML techniques (e.g. bi-directional LSTM, RNNs) to
@@ -130,7 +130,7 @@ const ExperienceTimeline = () => {
                     <TimelineContent sx={{py: '12px', px: 2}}>
                         <h2>Georgia Tech Research Institute</h2>
                         <h3>Undergraduate Researcher</h3>
-                        <img width={200} src={GT} alt={'gtcoc'}/>
+                        <img width={200} src={GT} alt={'gtcoc'} loading="lazy"/>
                         <p>Under Dr. Wenke Lee</p>
                         <p>Researched privacy-preserving biometric under the supervision of Dr. Wenke Lee. Built
                             applications using React.js/Tensorflow.js with remote biometric authentication using deep

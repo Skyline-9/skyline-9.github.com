@@ -8,6 +8,7 @@
   left: calc(100vw - 220px);
   bottom: 0px;
   text-align: center;
+  z-index: 99;
 }
 
 .sakana-subtext {

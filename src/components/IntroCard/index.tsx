@@ -7,7 +7,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import './style.css';
 
 // Assets
-import Me from "../../assets/images/me.jpg";
+import Me from "../../assets/images/me.webp";
 
 const IntroCard = () => {
 

@@ -18,7 +18,7 @@ const App = () => {
             <CyberpunkGlitch/>
             <IntroCard />
             <ExperienceTimeline/>
-            {/*<Projects />*/}
+            <Projects />
             <div className="sakana">
                 <SakanaReact className="sakana"
                              showControler={false}/>

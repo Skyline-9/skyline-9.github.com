@@ -5,7 +5,7 @@ import Button from "../Button";
 import './style.css';
 
 // Assets
-import resume from '../../assets/resume_richard_luo.pdf';
+import resume from '../../assets/richard_luo_resume.pdf';
 
 const CyberpunkGlitch = () => {
 

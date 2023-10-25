@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.298c8d12.css",
-    "main.js": "/static/js/main.709de0a2.js",
+    "main.css": "/static/css/main.8a327d41.css",
+    "main.js": "/static/js/main.f0ef8c89.js",
     "static/js/787.2d5e7265.chunk.js": "/static/js/787.2d5e7265.chunk.js",
-    "static/media/gt.jpg": "/static/media/gt.132adadc5eb9d06491ad.jpg",
-    "static/media/me.jpg": "/static/media/me.1ba0cd5d37c212b64550.jpg",
-    "static/media/richard_luo_resume.pdf": "/static/media/richard_luo_resume.77a3d18b54a5c15a8271.pdf",
+    "static/media/jointmoment.webp": "/static/media/jointmoment.9b995b9865c72b86731d.webp",
+    "static/media/background.webp": "/static/media/background.d9814d71ac5ec26a5b01.webp",
+    "static/media/richard_luo_resume.pdf": "/static/media/richard_luo_resume.7080d22dcdf954ba92f9.pdf",
+    "static/media/gt.webp": "/static/media/gt.1aa262a769fcd805f13c.webp",
     "static/media/nunito-sans-all-400-normal.woff": "/static/media/nunito-sans-all-400-normal.6829d5bb0386828b00bc.woff",
-    "static/media/aws.jpg": "/static/media/aws.edd1918aef2dd65a9891.jpg",
-    "static/media/ukg.png": "/static/media/ukg.a075e15aed525b0ed287.png",
+    "static/media/me.webp": "/static/media/me.d47c84cef2320ee0009c.webp",
+    "static/media/hokusai.webp": "/static/media/hokusai.34e47d8d9146e7ce2b2c.webp",
     "static/media/nunito-sans-latin-400-normal.woff2": "/static/media/nunito-sans-latin-400-normal.5c4de521b020a610c232.woff2",
     "static/media/nunito-sans-latin-ext-400-normal.woff2": "/static/media/nunito-sans-latin-ext-400-normal.3d7d18f958c14dddfbc0.woff2",
-    "static/media/rail.png": "/static/media/rail.b1f7a7220e4329768650.png",
+    "static/media/ukg.webp": "/static/media/ukg.c5c694f884c49c46ef10.webp",
     "static/media/nunito-sans-cyrillic-ext-400-normal.woff2": "/static/media/nunito-sans-cyrillic-ext-400-normal.f6d69d802ffb1d44610d.woff2",
+    "static/media/aws.webp": "/static/media/aws.d3ffc3997416c30bfe52.webp",
     "static/media/nunito-sans-cyrillic-400-normal.woff2": "/static/media/nunito-sans-cyrillic-400-normal.1dd0800644712a9519d0.woff2",
     "static/media/nunito-sans-vietnamese-400-normal.woff2": "/static/media/nunito-sans-vietnamese-400-normal.d68ebb752ccf1a0cdcef.woff2",
+    "static/media/rail.webp": "/static/media/rail.97d74a3c8c94215db85e.webp",
     "index.html": "/index.html",
-    "main.298c8d12.css.map": "/static/css/main.298c8d12.css.map",
-    "main.709de0a2.js.map": "/static/js/main.709de0a2.js.map",
+    "main.8a327d41.css.map": "/static/css/main.8a327d41.css.map",
+    "main.f0ef8c89.js.map": "/static/js/main.f0ef8c89.js.map",
     "787.2d5e7265.chunk.js.map": "/static/js/787.2d5e7265.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.298c8d12.css",
-    "static/js/main.709de0a2.js"
+    "static/css/main.8a327d41.css",
+    "static/js/main.f0ef8c89.js"
   ]
 }

@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.8a327d41.css",
-    "main.js": "/static/js/main.5d318685.js",
-    "static/js/787.2d5e7265.chunk.js": "/static/js/787.2d5e7265.chunk.js",
+    "main.css": "/static/css/main.3802007b.css",
+    "main.js": "/static/js/main.389a2d11.js",
+    "static/js/787.0904dc27.chunk.js": "/static/js/787.0904dc27.chunk.js",
     "static/media/jointmoment.webp": "/static/media/jointmoment.9b995b9865c72b86731d.webp",
     "static/media/background.webp": "/static/media/background.d9814d71ac5ec26a5b01.webp",
     "static/media/richard_luo_resume.pdf": "/static/media/richard_luo_resume.fd6261b39487447cb12b.pdf",
@@ -19,12 +19,12 @@
     "static/media/nunito-sans-vietnamese-400-normal.woff2": "/static/media/nunito-sans-vietnamese-400-normal.d68ebb752ccf1a0cdcef.woff2",
     "static/media/rail.webp": "/static/media/rail.97d74a3c8c94215db85e.webp",
     "index.html": "/index.html",
-    "main.8a327d41.css.map": "/static/css/main.8a327d41.css.map",
-    "main.5d318685.js.map": "/static/js/main.5d318685.js.map",
-    "787.2d5e7265.chunk.js.map": "/static/js/787.2d5e7265.chunk.js.map"
+    "main.3802007b.css.map": "/static/css/main.3802007b.css.map",
+    "main.389a2d11.js.map": "/static/js/main.389a2d11.js.map",
+    "787.0904dc27.chunk.js.map": "/static/js/787.0904dc27.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a327d41.css",
-    "static/js/main.5d318685.js"
+    "static/css/main.3802007b.css",
+    "static/js/main.389a2d11.js"
   ]
 }

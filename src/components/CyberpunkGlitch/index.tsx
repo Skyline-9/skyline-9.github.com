@@ -5,6 +5,8 @@ import Button from "../Button";
 import './style.css';
 
 // Assets
+// import resume from '../../../../Downloads/skyline-9.github.com-main/src/assets/richard_luo_resume.pdf';
+
 import resume from '../../assets/richard_luo_resume.pdf';
 
 const CyberpunkGlitch = () => {

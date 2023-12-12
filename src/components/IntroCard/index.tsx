@@ -7,7 +7,8 @@ import CodeIcon from "@mui/icons-material/Code";
 import './style.css';
 
 // Assets
-import Me from "../../assets/images/me.webp";
+// import Me from "../../../../Downloads/skyline-9.github.com-main/src/assets/images/me.webp";
+import Me from '../../assets/images/me.webp';
 
 const IntroCard = () => {
 

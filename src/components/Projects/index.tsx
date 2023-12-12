@@ -2,8 +2,8 @@
 import './style.css';
 
 // Assets
-import hokusai from "../../assets/images/hokusai.webp";
-import jointmoment from "../../assets/images/jointmoment.webp";
+import hokusai from '../../assets/images/hokusai.webp';
+import jointmoment from '../../assets/images/jointmoment.webp';
 
 // Components
 import LinkIcon from "@mui/icons-material/Link";

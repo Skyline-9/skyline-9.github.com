@@ -4,6 +4,7 @@ import './style.css';
 // Assets
 import hokusai from '../../assets/images/hokusai.webp';
 import jointmoment from '../../assets/images/jointmoment.webp';
+import sketch2drawings from '../../assets/images/sketch2drawings.webp';
 
 // Components
 import LinkIcon from "@mui/icons-material/Link";
@@ -74,6 +75,27 @@ const Projects = () => {
                     </div>
                     <div className="card-image">
                         <img src={hokusai} alt={'hokusai screenshot'} width={800} height={400}/>
+                    </div>
+                </div>
+            </div>
+            <div className="card">
+                <div className="card-content">
+                    <div className="card-info">
+                        <h3>Sketch2Drawings</h3>
+                        <h4>2021</h4>
+                        <h4>Using Conditional Generative Adversial Networks (cGANs), Sketch2drawings performs paired
+                            image-to-image translation on sketches and drawings. This deep learning mapping allows the
+                            project to turn a black and white sketch into a colorized drawing.
+                        </h4>
+                        <div id="social-media-container">
+                            <a href="https://github.com/Skyline-9/sketch2drawings" target="_blank"
+                               rel="noopener noreferrer nofollow">
+                                <CodeIcon className="icon"/> GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div className="card-image">
+                        <img src={sketch2drawings} alt={'sketch2drawings screenshot'} width={800} height={400}/>
                     </div>
                 </div>
             </div>

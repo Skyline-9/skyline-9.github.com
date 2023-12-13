@@ -84,7 +84,8 @@ const Projects = () => {
                         <h3>Sketch2Drawings</h3>
                         <h4>2021</h4>
                         <h4>Using Conditional Generative Adversial Networks (cGANs), Sketch2drawings performs paired
-                            image-to-image translation on sketches and drawings. This deep learning mapping allows the
+                            image-to-image translation on sketches and drawings. Data was first preprocessed using Canny
+                            edge detection to generate the sketch-colorization pair. This deep learning mapping allows the
                             project to turn a black and white sketch into a colorized drawing.
                         </h4>
                         <div id="social-media-container">

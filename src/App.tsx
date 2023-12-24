@@ -8,7 +8,7 @@ import CyberpunkGlitch from "./components/CyberpunkGlitch";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import IntroCard from "./components/IntroCard";
 import Projects from "./components/Projects";
-// import SakanaReact from 'sakana-react';
+import SakanaReact from "sakana-react-v2";
 
 const App = () => {
 
@@ -18,11 +18,11 @@ const App = () => {
             <IntroCard />
             <ExperienceTimeline/>
             <Projects />
-            {/*<div className="sakana">*/}
-            {/*    <SakanaReact className="sakana"*/}
-            {/*                 showControler={false}/>*/}
-            {/*    <p className="sakana-subtext"><i>Drag me around!</i></p>*/}
-            {/*</div>*/}
+            <div className="sakana">
+                <SakanaReact className="sakana"
+                             showControler={false}/>
+                <p className="sakana-subtext"><i>Drag me around!</i></p>
+            </div>
         </div>
     );
 }

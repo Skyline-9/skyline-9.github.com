@@ -20,7 +20,7 @@ const App = () => {
             <Projects />
             <div className="sakana">
                 <SakanaReact className="sakana"
-                             showControler={false}/>
+                             showController={false}/>
                 <p className="sakana-subtext"><i>Drag me around!</i></p>
             </div>
         </div>

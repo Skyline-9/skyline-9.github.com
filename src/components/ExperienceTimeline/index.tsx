@@ -11,6 +11,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import './style.css';
 
 // Assets
+import TIKTOK from "../../assets/images/tiktok.webp";
 import AWS from "../../assets/images/aws.webp";
 import UKG from "../../assets/images/ukg.webp";
 import RAIL from "../../assets/images/rail.webp";
@@ -26,6 +27,32 @@ const ExperienceTimeline = () => {
         <div className="experience-timeline">
             <h1>💼 Work Experience</h1>
             <Timeline position="alternate">
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{m: 'auto 0'}}
+                        align="right"
+                        variant="body2"
+                        color={`${ctpText}`}
+                    >
+                        June 2024 - Present
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector/>
+                        <TimelineDot sx={{
+                            backgroundColor: `${ctpGreen}`
+                        }}/>
+                        <TimelineConnector/>
+                    </TimelineSeparator>
+                    <TimelineContent sx={{py: '12px', px: 2}}>
+                        <h2>TikTok</h2>
+                        <h3>Software Engineer</h3>
+                        <img width={200} src={TIKTOK} alt={'aws'} loading="lazy"/>
+                        <p>Data Trust and Safety - Video Safety</p>
+                        <p>
+                            
+                        </p>
+                    </TimelineContent>
+                </TimelineItem>
                 <TimelineItem>
                     <TimelineOppositeContent
                         sx={{m: 'auto 0'}}

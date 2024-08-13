@@ -22,17 +22,16 @@ const IntroCard = () => {
                     <hr/>
                     <div>
                         <p>
-                            👋 Hii! I’m Richard, a MS grad student at Georgia Tech with a concentration in Machine
-                            Learning. At Georgia Tech, I'm part of The Agency (ML Club), GreyHat (Cybersecurity Club),
-                            and Figure Skating Club, but I'm into music, basketball, and photography outside of uni! If
+                            👋 Hii! I’m Richard, a Software Engineer at TikTok, where I work on protecting users from
+                            dangerous videos using a combination of ML and human moderation. I hold a MS in Computer
+                            Science from Georgia Tech with a concentration in Machine
+                            Learning. Outside of work, I'm really into music, basketball, and figure skating! If
                             you're interested in working with me, feel free to shoot me a message!
                         </p>
                         <p>
                             For fun, check out my <a id='highlight'
-                                                         href="https://app.thestorygraph.com/profile/thedarkfox"
-                                                         target='_target'>reading list here</a> and my
-                            <a id='highlight' href="https://letterboxd.com/TheDarkFox/" target='_target'> movie
-                                list here</a>!
+                                                     href="https://www.instagram.com/shotsbyrichardluo/"
+                                                     target='_target'>photography insta here</a>!
                         </p>
                         <div id="social-media-container">
                             <a href="https://www.linkedin.com/in/richardluorl" target="_blank"

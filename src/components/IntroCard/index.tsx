@@ -7,7 +7,6 @@ import CodeIcon from "@mui/icons-material/Code";
 import './style.css';
 
 // Assets
-// import Me from "../../../../Downloads/skyline-9.github.com-main/src/assets/images/me.webp";
 import Me from '../../assets/images/me.webp';
 
 const IntroCard = () => {
@@ -43,6 +42,10 @@ const IntroCard = () => {
                             </a>
                             <a href="https://github.com/Skyline-9" target="_blank" rel="noopener noreferrer nofollow">
                                 <CodeIcon className="icon"/> GitHub
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=Z-u5rZQAAAAJ&hl=en" target="_blank"
+                               rel="noopener noreferrer nofollow">
+                                <CodeIcon className="icon"/> Google Scholar
                             </a>
                         </div>
                     </div>

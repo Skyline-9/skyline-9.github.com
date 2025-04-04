@@ -4,22 +4,14 @@
     height: 100%;
     left: 0;
     top: 0;
-    opacity: 0.75;
+    opacity: 0; /* Changed from 0.75 to 0 to hide by default */
     position: absolute;
     transition: opacity 500ms;
     width: 100%;
 }
 
-#cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10rem;
-    width: 75%;
-    margin: auto;
-}
-
 .card {
-    border-radius: 8px;
+    /* border-radius: 8px; */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -28,27 +20,30 @@
 }
 
 .card::before {
-    background: radial-gradient(
-            600px circle at center bottom,
+    background: radial-gradient(600px circle at var(--mouse-x, center) var(--mouse-y, center),
             var(--ctp-mocha-green),
-            transparent 50%
-    );
+            transparent 50%);
     filter: blur(150px);
     z-index: 3;
     pointer-events: none;
 }
 
-.card > .card-content {
+.card:hover::before {
+    opacity: 0.75; /* Show gradient on hover */
+}
+
+.card>.card-content {
     background-color: var(--ctp-mocha-surface0);
     border-radius: inherit;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-grow: 1;
     inset: 1px;
     padding: 1rem 5rem;
     position: relative;
     z-index: 2;
     justify-content: space-between;
+    padding-bottom: 5rem;
 }
 
 .card-info {
@@ -56,18 +51,12 @@
     position: relative;
 }
 
-.card-info > h4 {
+.card-info>h4 {
     margin: 0;
 }
 
-.card-image {
-    flex: 0 0 55%;
-    margin-right: -10%;
-    margin-bottom: -10%;
-}
-
-.card-image > img {
-    width: 100%;
+.card-image>img {
+    width: 80%;
     height: auto;
 }
 
@@ -76,7 +65,7 @@
         width: 90%;
     }
 
-    .card > .card-content {
+    .card>.card-content {
         flex-direction: column;
         padding: 10px;
     }

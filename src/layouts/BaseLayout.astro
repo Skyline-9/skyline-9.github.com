@@ -9,9 +9,9 @@ interface Props {
 }
 
 const {
-  title = "Richard Luo's Website",
-  description = "Richard Luo is a Georgia Tech graduate student studying machine learning and artificial intelligence. Visit his website to learn more about his research and projects.",
-  keywords = "georgia tech graduate student, georgia tech master's student, georgia tech machine learning student, computer science grad student, machine learning researcher, artificial intelligence specialist, deep learning enthusiast, neural networks expert, AWS intern, Amazon Web Services internship, cloud computing intern, AWS machine learning intern, machine learning research, research publications in ML, AI thesis, conference papers on machine learning, Georgia Tech alum, Georgia Tech alumni network, Georgia Tech graduate success stories, Georgia Tech machine learning graduates, Python machine learning, TensorFlow projects, PyTorch projects, AWS CloudFront, data science with Python, natural language processing, computer vision, deep neural networks, machine learning applications, career in machine learning, AWS professional experience, graduate student achievements, tech industry internships, machine learning, richard, richard luo, luo, deep learning, PyTorch, Tensorflow, atlanta, machine learning in atlanta, deep learning in atlanta",
+  title = "Richard Luo | ML Engineer",
+  description = "ML Engineer at T-Mobile building agentic AI systems. Georgia Tech MS, Machine Learning.",
+  keywords = "Richard Luo, ML Engineer, Machine Learning, T-Mobile, Georgia Tech, Agentic AI, Deep Learning, Computer Vision",
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
@@ -24,23 +24,46 @@ const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Favicon and Canonical -->
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.svg" />
     <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Basic SEO -->
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
+    <meta name="language" content="en" />
     <meta name="author" content="Richard Luo" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#1e1e2e" />
+    
+    <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Richard Luo" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Richard Luo - ML Engineer" />
+    
+    <!-- Twitter/X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Richard Luo - ML Engineer" />
+    
+    <!-- Pinterest -->
+    <meta name="pinterest-rich-pin" content="true" />
+    
     <title>{title}</title>
     <script type="application/ld+json" is:inline>
       {
@@ -49,10 +72,10 @@ const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
           {
             "@type": "Person",
             "name": "Richard Luo",
-            "jobTitle": "Software Engineer",
+            "jobTitle": "Machine Learning Engineer",
             "worksFor": {
               "@type": "Organization",
-              "name": "TikTok"
+              "name": "T-Mobile"
             },
             "url": "https://skyline-9.github.io",
             "sameAs": [
@@ -68,8 +91,8 @@ const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
           {
             "@type": "WebSite",
             "url": "https://skyline-9.github.io",
-            "name": "Richard Luo's Website",
-            "description": "Richard Luo is a Georgia Tech graduate student studying machine learning and artificial intelligence. Visit his website to learn more about his research and projects.",
+            "name": "Richard Luo | Machine Learning Engineer",
+            "description": "ML Engineer at T-Mobile building agentic AI systems. Georgia Tech MS, Machine Learning.",
             "author": {
               "@type": "Person",
               "name": "Richard Luo"
@@ -79,6 +102,7 @@ const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
       }
     </script>
   </head>
+
   <body>
     <slot />
     <script is:inline>

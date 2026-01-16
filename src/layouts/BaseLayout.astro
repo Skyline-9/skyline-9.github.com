@@ -1,11 +1,14 @@
 ---
 import "../styles/global.css";
 import socialPreview from "../assets/social_preview.png";
+import nunito400 from "@fontsource/nunito-sans/files/nunito-sans-latin-400-normal.woff2?url";
+import chakra600 from "@fontsource/chakra-petch/files/chakra-petch-latin-600-normal.woff2?url";
 
 interface Props {
   title?: string;
   description?: string;
   keywords?: string;
+  preloadImage?: string;
 }
 
 const {
@@ -26,9 +29,10 @@ const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="icQMjU35ZxlbD7vDJ8o9LHy73ixlJrcbdvqDF0-NeO4" />
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preconnect and Preload for performance -->
+    {Astro.props.preloadImage && <link rel="preload" as="image" href={Astro.props.preloadImage} fetchpriority="high" />}
+    <link rel="preload" href={nunito400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={chakra600} as="font" type="font/woff2" crossorigin />
     
     <!-- Favicon and Canonical -->
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />

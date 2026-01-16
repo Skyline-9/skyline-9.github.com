@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Skyline-9/skyline-9.github.com">
-    <img src="src/assets/social_preview.jpg" alt="Social Preview" width="800">
+    <img src="src/assets/social_preview.png" alt="Social Preview" width="800">
   </a>
 
 <h3 align="center">Richard Luo Personal Website</h3>

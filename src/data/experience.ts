@@ -1,12 +1,13 @@
 import tmobile from "../assets/images/tmobile.svg";
 import tiktok from "../assets/images/tiktok.webp";
 import aws from "../assets/images/aws.webp";
+import type { ImageMetadata } from "astro";
 
 export interface ExperienceItem {
   date: string;
   company: string;
   role: string;
-  image: string;
+  image: ImageMetadata;
   altText: string;
   team: string;
   description: string;
@@ -17,7 +18,7 @@ export const experiences: ExperienceItem[] = [
     date: "October 2025 - Present",
     company: "T-Mobile",
     role: "Machine Learning Engineer",
-    image: tmobile.src,
+    image: tmobile,
     altText: "T-Mobile logo",
     team: "IntentCX – Innovation pod",
     description: "",
@@ -26,7 +27,7 @@ export const experiences: ExperienceItem[] = [
     date: "June 2024 - October 2025",
     company: "TikTok",
     role: "Software Engineer",
-    image: tiktok.src,
+    image: tiktok,
     altText: "TikTok logo",
     team: "Data Trust and Safety - Video Safety",
     description: "",
@@ -35,7 +36,7 @@ export const experiences: ExperienceItem[] = [
     date: "May 2023 - August 2023",
     company: "Amazon Web Services (AWS)",
     role: "Software Engineer Intern",
-    image: aws.src,
+    image: aws,
     altText: "Amazon Web Services logo",
     team: "CloudFront Platforms Team",
     description:

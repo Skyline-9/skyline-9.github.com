@@ -1,5 +1,6 @@
 ---
-import { GithubLogo, LinkedinLogo, EnvelopeSimple, GraduationCap } from "@phosphor-icons/react";
+import { GithubLogoIcon, LinkedinLogoIcon, EnvelopeSimpleIcon, GraduationCapIcon } from "@phosphor-icons/react";
+import { Image } from "astro:assets";
 import me from "../assets/images/me.webp";
 ---
 
@@ -70,10 +71,13 @@ import me from "../assets/images/me.webp";
     data-mouse-glow
   >
     <div class="flex flex-col md:flex-row justify-around p-8 md:p-12 relative z-[2]">
-      <img
+      <Image
         class="w-4/5 md:w-[30%] h-auto object-cover rounded-sm transition-all duration-300 mx-auto md:m-4"
-        src={me.src}
+        src={me}
         alt="Richard Luo, Machine Learning Engineer"
+        widths={[400, 800, 1200]}
+        sizes="(max-width: 768px) 80vw, (max-width: 1200px) 30vw, 400px"
+        priority
       />
       <div class="w-[95%] md:w-[60%] mx-auto md:mx-0">
         <h2 class="about-title">About Me</h2>
@@ -96,16 +100,16 @@ import me from "../assets/images/me.webp";
           </p>
           <div class="flex flex-row justify-center flex-wrap w-full mt-6 mx-auto gap-4">
             <a href="https://www.linkedin.com/in/richardluorl" target="_blank" rel="noopener noreferrer nofollow" class="social-link">
-              <LinkedinLogo className="icon" weight="duotone" /> LinkedIn
+              <LinkedinLogoIcon className="icon" weight="duotone" /> LinkedIn
             </a>
             <a href="mailto:luo.richard@gmail.com" target="_blank" rel="noopener noreferrer nofollow" class="social-link">
-              <EnvelopeSimple className="icon" weight="duotone" /> Email
+              <EnvelopeSimpleIcon className="icon" weight="duotone" /> Email
             </a>
             <a href="https://github.com/Skyline-9" target="_blank" rel="noopener noreferrer nofollow" class="social-link">
-              <GithubLogo className="icon" weight="duotone" /> GitHub
+              <GithubLogoIcon className="icon" weight="duotone" /> GitHub
             </a>
             <a href="https://scholar.google.com/citations?user=Z-u5rZQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer nofollow" class="social-link">
-              <GraduationCap className="icon" weight="duotone" /> Google Scholar
+              <GraduationCapIcon className="icon" weight="duotone" /> Google Scholar
             </a>
           </div>
         </div>

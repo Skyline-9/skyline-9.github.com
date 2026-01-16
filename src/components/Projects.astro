@@ -1,10 +1,11 @@
 ---
-import { Code, Link as LinkIcon, Kanban } from "@phosphor-icons/react";
+import { CodeIcon, LinkIcon, KanbanIcon } from "@phosphor-icons/react";
+import { Image } from "astro:assets";
 import { projects, type ProjectLink } from "../data/projects";
 
-const iconMap: Record<ProjectLink["icon"], typeof LinkIcon | typeof Code> = {
+const iconMap: Record<ProjectLink["icon"], typeof LinkIcon | typeof CodeIcon> = {
   link: LinkIcon,
-  code: Code,
+  code: CodeIcon,
 };
 
 const projectGroups = [
@@ -25,7 +26,7 @@ const projectGroups = [
     style="--section-icon-color: var(--ctp-mocha-sapphire);"
     data-animate="fade-up"
   >
-    <Kanban className="section-icon" weight="duotone" />
+    <KanbanIcon className="section-icon" weight="duotone" />
     <span>Projects</span>
   </h2>
   <div class="flex flex-col gap-10">
@@ -53,10 +54,11 @@ const projectGroups = [
               >
                 <div class="relative z-[2] flex flex-col gap-4 h-full">
                   <div class="project-media">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.altText}
-                      loading="lazy"
+                      widths={[400, 800, 1200, 1600]}
+                      sizes="(max-width: 640px) 90vw, (max-width: 1200px) 45vw, 600px"
                       class="project-media__img"
                     />
                   </div>

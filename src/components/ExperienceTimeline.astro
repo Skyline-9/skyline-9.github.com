@@ -1,5 +1,6 @@
 ---
-import { Briefcase } from "@phosphor-icons/react";
+import { BriefcaseIcon } from "@phosphor-icons/react";
+import { Image } from "astro:assets";
 import { experiences } from "../data/experience";
 ---
 
@@ -9,7 +10,7 @@ import { experiences } from "../data/experience";
     style="--section-icon-color: var(--ctp-mocha-peach);"
     data-animate="fade-up"
   >
-    <Briefcase className="section-icon" weight="duotone" />
+    <BriefcaseIcon className="section-icon" weight="duotone" />
     <span>Work Experience</span>
   </h2>
   <div class="timeline">
@@ -35,7 +36,7 @@ import { experiences } from "../data/experience";
           >
             <div class="card-header">
               <div class="card-logo">
-                <img src={item.image} alt={item.altText} loading="lazy" />
+                <Image src={item.image} alt={item.altText} width={56} height={56} />
               </div>
               <div class="card-meta">
                 <h3 class="card-company">{item.company}</h3>

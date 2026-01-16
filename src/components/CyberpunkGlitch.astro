@@ -3,10 +3,16 @@ import Button from "./Button.astro";
 import resume from "../assets/richard_luo_resume.pdf";
 
 const resumeUrl = resume;
+
+interface Props {
+  bgImage?: string;
+}
+
+const { bgImage } = Astro.props;
 ---
 
 <div id="hero" class="hero-container">
-  <div class="environment"></div>
+  <div class="environment" style={bgImage ? `background-image: url(${bgImage})` : undefined}></div>
   <h1 class="hero glitch layers animate-scale-in" data-text="Richard Luo"><span>Richard Luo</span></h1>
   <p class="hero-subtitle animate-fade-in-up delay-300">Machine Learning Engineer | Agentic AI</p>
   <div class="cta-wrapper animate-fade-in-up delay-500">
@@ -205,7 +211,10 @@ const resumeUrl = resume;
     bottom: 0;
     opacity: 0.5;
     filter: blur(5px);
-    background: url("../assets/images/background.webp") center fixed no-repeat;
+    /* background image set via inline style for LCP optimization */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 

@@ -1,5 +1,5 @@
 @import "@fontsource/nunito-sans/400.css";
-@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap");
+@import "@fontsource/chakra-petch/600.css";
 
 @tailwind base;
 @tailwind components;

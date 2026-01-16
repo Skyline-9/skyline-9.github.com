@@ -1,0 +1,291 @@
+---
+// Sakana Widget - Pure Astro Implementation
+// Spring physics character that bounces when dragged
+
+// Character images (base64 inline or use URLs)
+const characters = {
+  chisato: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/chisato.png",
+  takina: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/takina.png"
+};
+---
+
+<div class="sakana-widget" data-character="chisato">
+  <div class="sakana-container">
+    <canvas class="sakana-canvas"></canvas>
+    <img 
+      class="sakana-character" 
+      src={characters.chisato}
+      alt="Sakana character"
+      draggable="false"
+    />
+  </div>
+  <p class="sakana-subtext">
+    <i>Drag me around!</i>
+  </p>
+</div>
+
+<style>
+  .sakana-widget {
+    position: fixed !important;
+    right: 20px;
+    bottom: 0;
+    text-align: center;
+    z-index: 99;
+    user-select: none;
+  }
+
+  .sakana-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    touch-action: none;
+    cursor: grab;
+  }
+
+  .sakana-container:active {
+    cursor: grabbing;
+  }
+
+  .sakana-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .sakana-character {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .sakana-subtext {
+    width: 200px;
+    margin: 0;
+    color: var(--ctp-mocha-subtext0);
+    font-size: 0.85rem;
+  }
+
+  @media only screen and (max-width: 810px) {
+    .sakana-widget {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  class SakanaWidget {
+    private container: HTMLElement;
+    private canvas: HTMLCanvasElement;
+    private ctx: CanvasRenderingContext2D;
+    private character: HTMLImageElement;
+    private widget: HTMLElement;
+    
+    // Spring physics state
+    private x = 0;
+    private y = 0;
+    private vx = 0;
+    private vy = 0;
+    private rotate = 0;
+    private vRotate = 0;
+    
+    // Drag state
+    private isDragging = false;
+    private dragStartX = 0;
+    private dragStartY = 0;
+    private initialX = 0;
+    private initialY = 0;
+    
+    // Physics constants
+    private readonly tension = 180;
+    private readonly friction = 4;  // Reduced from 12 for more visible bounce
+    private readonly mass = 1;
+    private readonly maxDistance: number;
+    
+    // Animation
+    private animationId: number | null = null;
+    private lastTime = 0;
+
+    constructor(widget: HTMLElement) {
+      this.widget = widget;
+      this.container = widget.querySelector('.sakana-container')!;
+      this.canvas = widget.querySelector('.sakana-canvas')!;
+      this.character = widget.querySelector('.sakana-character')!;
+      this.ctx = this.canvas.getContext('2d')!;
+      
+      // Set canvas size
+      const rect = this.container.getBoundingClientRect();
+      this.canvas.width = rect.width;
+      this.canvas.height = rect.height;
+      this.maxDistance = Math.min(rect.width, rect.height) / 2 - 20;
+      
+      this.bindEvents();
+      this.startAnimation();
+    }
+
+    private bindEvents() {
+      // Pointer events for drag
+      this.container.addEventListener('pointerdown', this.onPointerDown.bind(this));
+      window.addEventListener('pointermove', this.onPointerMove.bind(this));
+      window.addEventListener('pointerup', this.onPointerUp.bind(this));
+      window.addEventListener('pointercancel', this.onPointerUp.bind(this));
+      
+      // Double click to switch character
+      this.container.addEventListener('dblclick', this.switchCharacter.bind(this));
+    }
+
+    private onPointerDown(e: PointerEvent) {
+      e.preventDefault();
+      this.isDragging = true;
+      this.dragStartX = e.clientX;
+      this.dragStartY = e.clientY;
+      this.initialX = this.x;
+      this.initialY = this.y;
+      
+      // Reset velocity when starting drag
+      this.vx = 0;
+      this.vy = 0;
+      this.vRotate = 0;
+      
+      this.container.setPointerCapture(e.pointerId);
+    }
+
+    private onPointerMove(e: PointerEvent) {
+      if (!this.isDragging) return;
+      
+      const dx = e.clientX - this.dragStartX;
+      const dy = e.clientY - this.dragStartY;
+      
+      let newX = this.initialX + dx;
+      let newY = this.initialY + dy;
+      
+      // Clamp to max distance (circular boundary)
+      const distance = Math.sqrt(newX * newX + newY * newY);
+      if (distance > this.maxDistance) {
+        const angle = Math.atan2(newY, newX);
+        newX = Math.cos(angle) * this.maxDistance;
+        newY = Math.sin(angle) * this.maxDistance;
+      }
+      
+      this.x = newX;
+      this.y = newY;
+      this.rotate = Math.max(Math.min(45, newX / 2), -45);
+    }
+
+    private onPointerUp(e: PointerEvent) {
+      if (!this.isDragging) return;
+      this.isDragging = false;
+      this.container.releasePointerCapture(e.pointerId);
+    }
+
+    private switchCharacter() {
+      const current = this.widget.dataset.character;
+      const next = current === 'chisato' ? 'takina' : 'chisato';
+      this.widget.dataset.character = next;
+      
+      const characters: Record<string, string> = {
+        chisato: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/chisato.png",
+        takina: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/takina.png"
+      };
+      
+      this.character.src = characters[next];
+    }
+
+    private startAnimation() {
+      this.lastTime = performance.now();
+      this.animate();
+    }
+
+    private animate() {
+      const now = performance.now();
+      const dt = Math.min((now - this.lastTime) / 1000, 0.1); // Cap delta time
+      this.lastTime = now;
+
+      if (!this.isDragging) {
+        // Spring physics simulation
+        // F = -kx - cv (spring force - damping force)
+        const springForceX = -this.tension * this.x;
+        const dampingForceX = -this.friction * this.vx;
+        const ax = (springForceX + dampingForceX) / this.mass;
+        
+        const springForceY = -this.tension * this.y;
+        const dampingForceY = -this.friction * this.vy;
+        const ay = (springForceY + dampingForceY) / this.mass;
+        
+        const springForceR = -this.tension * this.rotate;
+        const dampingForceR = -this.friction * this.vRotate;
+        const ar = (springForceR + dampingForceR) / this.mass;
+        
+        // Verlet integration
+        this.vx += ax * dt;
+        this.vy += ay * dt;
+        this.vRotate += ar * dt;
+        
+        this.x += this.vx * dt;
+        this.y += this.vy * dt;
+        this.rotate += this.vRotate * dt;
+        
+        // Stop when motion is negligible
+        const velocity = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        const position = Math.sqrt(this.x * this.x + this.y * this.y);
+        if (velocity < 0.01 && position < 0.1) {
+          this.x = 0;
+          this.y = 0;
+          this.rotate = 0;
+          this.vx = 0;
+          this.vy = 0;
+          this.vRotate = 0;
+        }
+      }
+
+      this.render();
+      this.animationId = requestAnimationFrame(() => this.animate());
+    }
+
+    private render() {
+      const centerX = this.canvas.width / 2;
+      const centerY = this.canvas.height / 2;
+      
+      // Clear and draw line
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.beginPath();
+      this.ctx.lineWidth = 3;
+      this.ctx.strokeStyle = 'rgba(116, 199, 236, 0.6)';
+      this.ctx.lineCap = 'round';
+      this.ctx.moveTo(centerX, centerY);
+      this.ctx.lineTo(centerX + this.x, centerY + this.y);
+      this.ctx.stroke();
+      
+      // Update character transform
+      this.character.style.transform = `translate(calc(-50% + ${this.x}px), calc(-50% + ${this.y}px)) rotate(${this.rotate}deg)`;
+    }
+
+    destroy() {
+      if (this.animationId) {
+        cancelAnimationFrame(this.animationId);
+      }
+    }
+  }
+
+  // Initialize widget
+  document.addEventListener('DOMContentLoaded', () => {
+    const widget = document.querySelector('.sakana-widget');
+    if (widget) {
+      new SakanaWidget(widget as HTMLElement);
+    }
+  });
+
+  // Also try immediately in case DOM is already loaded
+  const widget = document.querySelector('.sakana-widget');
+  if (widget) {
+    new SakanaWidget(widget as HTMLElement);
+  }
+</script>

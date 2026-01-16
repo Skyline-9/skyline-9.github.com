@@ -1,0 +1,249 @@
+---
+const sections = [
+  { id: "hero", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+];
+---
+
+<nav class="scroll-indicator" aria-label="Page sections">
+  <div class="track-container">
+    <div class="track-bg"></div>
+    <div class="track-progress"></div>
+  </div>
+  <ul>
+    {sections.map((section) => (
+      <li>
+        <a href={`#${section.id}`} data-section={section.id} aria-label={section.label}>
+          <span class="dot"></span>
+          <span class="label">{section.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  const indicator = document.querySelector('.scroll-indicator');
+  const links = document.querySelectorAll('.scroll-indicator a');
+  const trackProgress = document.querySelector('.track-progress') as HTMLElement;
+  const dots = document.querySelectorAll('.scroll-indicator .dot');
+  const trackContainer = document.querySelector('.track-container') as HTMLElement;
+  const sections = ['hero', 'about', 'experience', 'projects'];
+  
+  function updateActiveSection() {
+    const scrollPosition = window.scrollY + window.innerHeight / 3;
+    
+    let currentIndex = 0;
+    let sectionPositions: number[] = [];
+    
+    // Get all section positions
+    for (let i = 0; i < sections.length; i++) {
+      const element = document.getElementById(sections[i]);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const offsetTop = rect.top + window.scrollY;
+        sectionPositions.push(offsetTop);
+        
+        if (scrollPosition >= offsetTop) {
+          currentIndex = i;
+        }
+      }
+    }
+    
+    links.forEach((link, index) => {
+      if (index <= currentIndex) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Calculate progress line height based on dot positions
+    if (trackProgress && trackContainer && dots.length > 0) {
+      const trackHeight = trackContainer.offsetHeight;
+      
+      // Get dot positions relative to track
+      const dotPositions: number[] = [];
+      dots.forEach((dot) => {
+        const dotEl = dot as HTMLElement;
+        const dotRect = dotEl.getBoundingClientRect();
+        const trackRect = trackContainer.getBoundingClientRect();
+        const relativeTop = dotRect.top - trackRect.top + (dotEl.offsetHeight / 2);
+        dotPositions.push(relativeTop);
+      });
+
+      // Calculate progress based on current section and position within it
+      const lastSectionIndex = sections.length - 1;
+      let progressHeight = 0;
+
+      if (currentIndex >= lastSectionIndex) {
+        // At or past last section - fill to end
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = Math.min(window.scrollY / docHeight, 1);
+        const lastDotPos = dotPositions[lastSectionIndex] || trackHeight;
+        progressHeight = lastDotPos + (trackHeight - lastDotPos) * scrollPercent;
+      } else {
+        // Between sections - interpolate
+        const currentSectionTop = sectionPositions[currentIndex] || 0;
+        const nextSectionTop = sectionPositions[currentIndex + 1] || currentSectionTop;
+        const sectionProgress = Math.min(
+          Math.max((scrollPosition - currentSectionTop) / (nextSectionTop - currentSectionTop), 0),
+          1
+        );
+        
+        const currentDotPos = dotPositions[currentIndex] || 0;
+        const nextDotPos = dotPositions[currentIndex + 1] || trackHeight;
+        progressHeight = currentDotPos + (nextDotPos - currentDotPos) * sectionProgress;
+      }
+
+      trackProgress.style.height = `${progressHeight}px`;
+    }
+  }
+
+  // Show/hide based on scroll position (hide at very top)
+  function updateVisibility() {
+    if (window.scrollY > 100) {
+      indicator?.classList.add('visible');
+    } else {
+      indicator?.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    updateActiveSection();
+    updateVisibility();
+  }, { passive: true });
+
+  updateActiveSection();
+  updateVisibility();
+</script>
+
+<style>
+  .scroll-indicator {
+    position: fixed;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .scroll-indicator.visible {
+    opacity: 0.7;
+    pointer-events: auto;
+  }
+
+  .scroll-indicator:hover {
+    opacity: 1;
+  }
+
+  .track-container {
+    position: absolute;
+    left: 3px;
+    top: 4px;
+    bottom: 4px;
+    width: 1px;
+  }
+
+  .track-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--ctp-mocha-surface0);
+    border-radius: 1px;
+  }
+
+  .track-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--ctp-mocha-peach);
+    border-radius: 1px;
+    box-shadow: 0 0 4px var(--ctp-mocha-peach);
+    transition: height 0.05s linear;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ctp-mocha-subtext0);
+    transition: color 0.2s ease;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ctp-mocha-surface1);
+    border: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .label {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  a:hover .label {
+    opacity: 0.6;
+  }
+
+  a:hover .dot {
+    background: var(--ctp-mocha-surface2);
+  }
+
+  a.active .dot {
+    background: var(--ctp-mocha-peach);
+  }
+
+  a.active .label {
+    color: var(--ctp-mocha-peach);
+  }
+
+  /* Only show label for current section (last active) */
+  li:last-child a.active .label,
+  li:has(+ li a:not(.active)) a.active .label {
+    opacity: 0.9;
+  }
+
+  /* Hide on mobile */
+  @media (max-width: 1024px) {
+    .scroll-indicator {
+      display: none;
+    }
+  }
+</style>

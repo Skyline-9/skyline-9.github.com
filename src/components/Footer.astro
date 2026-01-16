@@ -1,0 +1,41 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <p>&copy; {currentYear} Richard Luo. Making dreams come true since 2002.</p>
+  <p>
+    <a href="mailto:luo.richard@gmail.com" target="_blank" rel="noopener noreferrer nofollow">Email</a>
+    <span aria-hidden="true">•</span>
+    <a href="https://www.linkedin.com/in/richardluorl" target="_blank" rel="noopener noreferrer nofollow">LinkedIn</a>
+    <span aria-hidden="true">•</span>
+    <a href="https://github.com/Skyline-9" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>
+    <span aria-hidden="true">•</span>
+    <a href="https://scholar.google.com/citations?user=Z-u5rZQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer nofollow">Google Scholar</a>
+  </p>
+</footer>
+
+<style>
+  footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid var(--ctp-mocha-surface2);
+    margin-top: 4rem;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--ctp-mocha-subtext0);
+  }
+
+  footer a {
+    color: var(--ctp-mocha-sapphire);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover {
+    color: var(--ctp-mocha-lavender);
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import { Code, Link as LinkIcon, Kanban } from "@phosphor-icons/react";
+import { projects, type ProjectLink } from "../data/projects";
+
+const iconMap: Record<ProjectLink["icon"], typeof LinkIcon | typeof Code> = {
+  link: LinkIcon,
+  code: Code,
+};
+
+const projectGroups = [
+  {
+    title: "Publications",
+    items: projects.filter((p) => p.type === "Paper"),
+  },
+  {
+    title: "Builds",
+    items: projects.filter((p) => p.type !== "Paper"),
+  },
+].filter((group) => group.items.length > 0);
+---
+
+<section id="projects" class="projects-section w-4/5 max-w-[1200px] mx-auto">
+  <h2
+    class="section-title section-title--glitch"
+    style="--section-icon-color: var(--ctp-mocha-sapphire);"
+    data-animate="fade-up"
+  >
+    <Kanban className="section-icon" weight="duotone" />
+    <span>Projects</span>
+  </h2>
+  <div class="flex flex-col gap-10">
+    {projectGroups.map((group) => (
+      <div>
+        <h3
+          class="mb-4 text-left text-[1.25rem] font-semibold text-[var(--ctp-mocha-text)]"
+          style="font-family: 'Chakra Petch', sans-serif;"
+          data-animate="fade-up"
+        >
+          {group.title}
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {group.items.map((project, index) => {
+            const badgeVariant = project.type.toLowerCase();
+            const metaText = project.venue ? `${project.venue} — ${project.year}` : project.year;
+            const animateDelay = Math.min(index * 100, 500);
+
+            return (
+              <article
+                class="cy-card cy-card--angled p-6 flex flex-col h-full hover-lift"
+                data-mouse-glow
+                data-animate="fade-up"
+                data-animate-delay={`${animateDelay}`}
+              >
+                <div class="relative z-[2] flex flex-col gap-4 h-full">
+                  <div class="project-media">
+                    <img
+                      src={project.image}
+                      alt={project.altText}
+                      loading="lazy"
+                      class="project-media__img"
+                    />
+                  </div>
+
+                  <header class="text-left">
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+                      <span class={`cy-badge cy-badge--${badgeVariant}`}>{project.type}</span>
+                      <span class="text-sm text-[var(--ctp-mocha-subtext0)]">{metaText}</span>
+                    </div>
+
+                    <h4 class="mt-3 mb-0 text-[1.25rem] leading-snug">{project.title}</h4>
+                    <p class="mt-2 text-[var(--ctp-mocha-subtext1)]">{project.summary}</p>
+                  </header>
+
+                  <div class="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <span class="cy-tag">{t}</span>
+                    ))}
+                  </div>
+
+                  {(project.details?.length || project.highlights?.length) && (
+                    <div class="project-details">
+                      <button class="project-details__summary" type="button" aria-expanded="false">
+                        <span>Read more</span>
+                        <span class="project-details__chevron">▾</span>
+                      </button>
+                      <div class="project-details__wrapper">
+                        <div class="project-details__content">
+                          <ul class="project-details__list">
+                            {project.highlights?.map((item) => (
+                              <li>{item}</li>
+                            ))}
+                            {project.details?.map((item) => (
+                              <li>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  <div class="flex flex-row justify-center flex-wrap gap-3 mt-auto pt-2">
+                    {project.links.map((link) => {
+                      const Icon = iconMap[link.icon];
+                      return (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          class="cy-cta"
+                        >
+                          <Icon className="icon" weight="duotone" />
+                          <span>{link.label}</span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.project-details').forEach((container) => {
+    const button = container.querySelector('.project-details__summary');
+    const wrapper = container.querySelector('.project-details__wrapper');
+    const content = container.querySelector('.project-details__content');
+
+    if (!button || !wrapper || !content) return;
+
+    button.addEventListener('click', () => {
+      const isOpen = container.classList.contains('is-open');
+
+      if (isOpen) {
+        // Closing
+        container.classList.add('is-closing');
+        container.classList.remove('is-open');
+        button.setAttribute('aria-expanded', 'false');
+
+        wrapper.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName === 'grid-template-rows') {
+            wrapper.removeEventListener('transitionend', handler);
+            container.classList.remove('is-closing');
+          }
+        });
+      } else {
+        // Opening
+        container.classList.add('is-open');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

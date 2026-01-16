@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import socialPreview from "../assets/social_preview.jpg";
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+const {
+  title = "Richard Luo's Website",
+  description = "Richard Luo is a Georgia Tech graduate student studying machine learning and artificial intelligence. Visit his website to learn more about his research and projects.",
+  keywords = "georgia tech graduate student, georgia tech master's student, georgia tech machine learning student, computer science grad student, machine learning researcher, artificial intelligence specialist, deep learning enthusiast, neural networks expert, AWS intern, Amazon Web Services internship, cloud computing intern, AWS machine learning intern, machine learning research, research publications in ML, AI thesis, conference papers on machine learning, Georgia Tech alum, Georgia Tech alumni network, Georgia Tech graduate success stories, Georgia Tech machine learning graduates, Python machine learning, TensorFlow projects, PyTorch projects, AWS CloudFront, data science with Python, natural language processing, computer vision, deep neural networks, machine learning applications, career in machine learning, AWS professional experience, graduate student achievements, tech industry internships, machine learning, richard, richard luo, luo, deep learning, PyTorch, Tensorflow, atlanta, machine learning in atlanta, deep learning in atlanta",
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="author" content="Richard Luo" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Mouse-follow glow for [data-mouse-glow] elements
+        document.querySelectorAll("[data-mouse-glow]").forEach((el) => {
+          el.addEventListener("mousemove", (e) => {
+            const rect = el.getBoundingClientRect();
+            el.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+            el.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+          });
+        });
+
+        // Scroll reveal animations with Intersection Observer
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -50px 0px",
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll("[data-animate]").forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -2,21 +2,28 @@
 // Sakana Widget - Pure Astro Implementation
 // Spring physics character that bounces when dragged
 
-// Character images (base64 inline or use URLs)
+import { Image } from "astro:assets";
+import chisato from "../assets/images/chisato.png";
+import takina from "../assets/images/takina.png";
+
+// Character images
 const characters = {
-  chisato: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/chisato.png",
-  takina: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/takina.png"
+  chisato: chisato,
+  takina: takina
 };
 ---
 
 <div class="sakana-widget" data-character="chisato">
   <div class="sakana-container">
     <canvas class="sakana-canvas"></canvas>
-    <img 
+    <Image 
       class="sakana-character" 
       src={characters.chisato}
       alt="Sakana character"
       draggable="false"
+      id="sakana-img-el"
+      data-chisato-src={characters.chisato.src}
+      data-takina-src={characters.takina.src}
     />
   </div>
   <p class="sakana-subtext">
@@ -191,12 +198,10 @@ const characters = {
       const next = current === 'chisato' ? 'takina' : 'chisato';
       this.widget.dataset.character = next;
       
-      const characters: Record<string, string> = {
-        chisato: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/chisato.png",
-        takina: "https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/takina.png"
-      };
-      
-      this.character.src = characters[next];
+      const nextSrc = this.character.dataset[`${next}Src`];
+      if (nextSrc) {
+        this.character.src = nextSrc;
+      }
     }
 
     private startAnimation() {

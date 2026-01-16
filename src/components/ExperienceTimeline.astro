@@ -1,5 +1,6 @@
 ---
 import { Briefcase } from "@phosphor-icons/react";
+import { Image } from "astro:assets";
 import { experiences } from "../data/experience";
 ---
 
@@ -35,7 +36,7 @@ import { experiences } from "../data/experience";
           >
             <div class="card-header">
               <div class="card-logo">
-                <img src={item.image} alt={item.altText} loading="lazy" />
+                <Image src={item.image} alt={item.altText} width={56} height={56} />
               </div>
               <div class="card-meta">
                 <h3 class="card-company">{item.company}</h3>

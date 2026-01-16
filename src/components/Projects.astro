@@ -1,5 +1,6 @@
 ---
 import { Code, Link as LinkIcon, Kanban } from "@phosphor-icons/react";
+import { Image } from "astro:assets";
 import { projects, type ProjectLink } from "../data/projects";
 
 const iconMap: Record<ProjectLink["icon"], typeof LinkIcon | typeof Code> = {
@@ -53,10 +54,11 @@ const projectGroups = [
               >
                 <div class="relative z-[2] flex flex-col gap-4 h-full">
                   <div class="project-media">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.altText}
-                      loading="lazy"
+                      widths={[240, 540, 720, project.image.width]}
+                      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${project.image.width}px`}
                       class="project-media__img"
                     />
                   </div>

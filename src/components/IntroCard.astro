@@ -1,5 +1,6 @@
 ---
 import { GithubLogo, LinkedinLogo, EnvelopeSimple, GraduationCap } from "@phosphor-icons/react";
+import { Image } from "astro:assets";
 import me from "../assets/images/me.webp";
 ---
 
@@ -70,10 +71,13 @@ import me from "../assets/images/me.webp";
     data-mouse-glow
   >
     <div class="flex flex-col md:flex-row justify-around p-8 md:p-12 relative z-[2]">
-      <img
+      <Image
         class="w-4/5 md:w-[30%] h-auto object-cover rounded-sm transition-all duration-300 mx-auto md:m-4"
-        src={me.src}
+        src={me}
         alt="Richard Luo, Machine Learning Engineer"
+        widths={[320, 486, me.width]}
+        sizes={`(max-width: 768px) 320px, (max-width: 1200px) 486px, ${me.width}px`}
+        priority
       />
       <div class="w-[95%] md:w-[60%] mx-auto md:mx-0">
         <h2 class="about-title">About Me</h2>

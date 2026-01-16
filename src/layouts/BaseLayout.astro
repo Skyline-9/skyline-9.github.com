@@ -6,6 +6,7 @@ interface Props {
   title?: string;
   description?: string;
   keywords?: string;
+  preloadImage?: string;
 }
 
 const {
@@ -27,8 +28,7 @@ const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
     <meta name="google-site-verification" content="icQMjU35ZxlbD7vDJ8o9LHy73ixlJrcbdvqDF0-NeO4" />
     
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {Astro.props.preloadImage && <link rel="preload" as="image" href={Astro.props.preloadImage} />}
     
     <!-- Favicon and Canonical -->
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />

@@ -2,6 +2,7 @@ import shotluckholmes from "../assets/images/shotluckholmes.webp";
 import jointmoment from "../assets/images/jointmoment.webp";
 import hokusai from "../assets/images/hokusai.webp";
 import sketch2drawings from "../assets/images/sketch2drawings.webp";
+import type { ImageMetadata } from "astro";
 
 export interface ProjectLink {
   label: string;
@@ -19,7 +20,7 @@ export interface Project {
   summary: string;
   highlights: string[];
   tech: string[];
-  image: string;
+  image: ImageMetadata;
   altText: string;
   links: ProjectLink[];
   details?: string[];
@@ -46,7 +47,7 @@ export const projects: Project[] = [
       "Pretraining",
       "Data Curation",
     ],
-    image: shotluckholmes.src,
+    image: shotluckholmes,
     altText: "Shotluck Holmes video captioning model architecture diagram",
     links: [
       {
@@ -79,7 +80,7 @@ export const projects: Project[] = [
       "Transformer-style encoder–decoder design inspired by ViT techniques.",
     ],
     tech: ["Multimodal Transformers", "Video Retrieval", "Highlight Detection", "Audio-Visual", "NLP"],
-    image: jointmoment.src,
+    image: jointmoment,
     altText: "Joint Moment Retrieval transformer architecture diagram",
     links: [
       {
@@ -111,7 +112,7 @@ export const projects: Project[] = [
       "Colab GPU workers poll requests, run generation, and upload results.",
     ],
     tech: ["React", "WebXR", "Firebase", "CLIP", "VQGAN", "Google Colab", "Heroku"],
-    image: hokusai.src,
+    image: hokusai,
     altText: "HokusAI AI-generated artwork example",
     links: [
       {
@@ -148,7 +149,7 @@ export const projects: Project[] = [
       "Plausible, consistent colorization from rough inputs.",
     ],
     tech: ["cGAN", "Image-to-Image", "Canny Edge", "Computer Vision"],
-    image: sketch2drawings.src,
+    image: sketch2drawings,
     altText: "Sketch2Drawings before and after colorization comparison",
     links: [
       {

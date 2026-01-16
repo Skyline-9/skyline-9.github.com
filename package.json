@@ -13,7 +13,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.1.0",
     "@astrojs/tailwind": "^6.0.2",
     "@fontsource/nunito-sans": "^5.0.8",
     "@phosphor-icons/react": "^2.1.10",
@@ -33,6 +35,6 @@
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^3.4.19",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.3"
   }
 }

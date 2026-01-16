@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import socialPreview from "../assets/social_preview.jpg";
+import socialPreview from "../assets/social_preview.png";
 
 interface Props {
   title?: string;
@@ -42,6 +42,42 @@ const socialImageUrl = new URL(socialPreview.src, siteUrl).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Richard Luo",
+            "jobTitle": "Software Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "TikTok"
+            },
+            "url": "https://skyline-9.github.io",
+            "sameAs": [
+              "https://www.linkedin.com/in/richardluorl",
+              "https://github.com/Skyline-9",
+              "https://scholar.google.com/citations?user=Z-u5rZQAAAAJ&hl=en"
+            ],
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Georgia Institute of Technology"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://skyline-9.github.io",
+            "name": "Richard Luo's Website",
+            "description": "Richard Luo is a Georgia Tech graduate student studying machine learning and artificial intelligence. Visit his website to learn more about his research and projects.",
+            "author": {
+              "@type": "Person",
+              "name": "Richard Luo"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <slot />

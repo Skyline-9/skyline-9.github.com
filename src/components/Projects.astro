@@ -142,7 +142,7 @@ const projectGroups = [
         button.setAttribute('aria-expanded', 'false');
 
         wrapper.addEventListener('transitionend', function handler(e) {
-          // @ts-ignore
+          // @ts-expect-error - propertyName is not present on type Event
           if (e.propertyName === 'grid-template-rows') {
             wrapper.removeEventListener('transitionend', handler);
             container.classList.remove('is-closing');

@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-Sitemap: https://skyline-9.github.io/sitemap.xml
+Sitemap: https://skyline-9.github.io/sitemap-index.xml

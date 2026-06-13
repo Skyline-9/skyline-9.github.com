@@ -17,11 +17,11 @@ export const experiences: ExperienceItem[] = [
   {
     date: "October 2025 - Present",
     company: "T-Mobile",
-    role: "Machine Learning Engineer",
+    role: "Senior AI Modeling Engineer",
     image: tmobile,
     altText: "T-Mobile logo",
-    team: "IntentCX – Innovation pod",
-    description: "",
+    team: "IntentCX – Innovation Pod",
+    description: "Serving as Tech Lead for the Innovation Pod, driving the technical architecture and development for IntentCX.",
   },
   {
     date: "June 2024 - October 2025",

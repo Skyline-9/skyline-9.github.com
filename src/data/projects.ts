@@ -85,7 +85,7 @@ export const projects: Project[] = [
     links: [
       {
         label: "Paper",
-        url: "https://arxiv.org/abs/2305.04961",
+        url: "https://www.alphaxiv.org/abs/2305.04961",
         icon: "link",
       },
       {

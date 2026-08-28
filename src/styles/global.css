@@ -188,7 +188,9 @@
   }
 
   @keyframes iconGlitch {
-    0%, 90%, 100% {
+    0%,
+    90%,
+    100% {
       filter: drop-shadow(0 0 8px var(--section-icon-color, var(--ctp-mocha-sapphire)));
       transform: translate(0, 0);
     }
@@ -383,7 +385,9 @@
     line-height: 1.5;
     opacity: 0;
     transform: translateX(-6px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   .project-details.is-open .project-details__list li {
@@ -392,11 +396,21 @@
   }
 
   /* Staggered delays for list items */
-  .project-details.is-open .project-details__list li:nth-child(1) { transition-delay: 0.08s; }
-  .project-details.is-open .project-details__list li:nth-child(2) { transition-delay: 0.12s; }
-  .project-details.is-open .project-details__list li:nth-child(3) { transition-delay: 0.16s; }
-  .project-details.is-open .project-details__list li:nth-child(4) { transition-delay: 0.2s; }
-  .project-details.is-open .project-details__list li:nth-child(5) { transition-delay: 0.24s; }
+  .project-details.is-open .project-details__list li:nth-child(1) {
+    transition-delay: 0.08s;
+  }
+  .project-details.is-open .project-details__list li:nth-child(2) {
+    transition-delay: 0.12s;
+  }
+  .project-details.is-open .project-details__list li:nth-child(3) {
+    transition-delay: 0.16s;
+  }
+  .project-details.is-open .project-details__list li:nth-child(4) {
+    transition-delay: 0.2s;
+  }
+  .project-details.is-open .project-details__list li:nth-child(5) {
+    transition-delay: 0.24s;
+  }
 
   .project-details__list li::marker {
     color: var(--ctp-mocha-sapphire);
@@ -521,7 +535,9 @@ body::before {
 [data-animate] {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 [data-animate].visible {
@@ -555,17 +571,29 @@ body::before {
 }
 
 /* Staggered animation delays */
-[data-animate-delay="100"] { transition-delay: 100ms; }
-[data-animate-delay="200"] { transition-delay: 200ms; }
-[data-animate-delay="300"] { transition-delay: 300ms; }
-[data-animate-delay="400"] { transition-delay: 400ms; }
-[data-animate-delay="500"] { transition-delay: 500ms; }
+[data-animate-delay="100"] {
+  transition-delay: 100ms;
+}
+[data-animate-delay="200"] {
+  transition-delay: 200ms;
+}
+[data-animate-delay="300"] {
+  transition-delay: 300ms;
+}
+[data-animate-delay="400"] {
+  transition-delay: 400ms;
+}
+[data-animate-delay="500"] {
+  transition-delay: 500ms;
+}
 
 /* ========================================
    Enhanced Hover Effects
    ======================================== */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
@@ -640,7 +668,8 @@ body::before {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -669,13 +698,27 @@ body::before {
 }
 
 /* Animation delay utilities */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
+.delay-600 {
+  animation-delay: 600ms;
+}
+.delay-700 {
+  animation-delay: 700ms;
+}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -690,7 +733,7 @@ body::before {
     transform: none;
     transition: none;
   }
-  
+
   body::before {
     animation: none;
   }
@@ -716,4 +759,3 @@ ol {
   position: relative;
   z-index: 1;
 }
-

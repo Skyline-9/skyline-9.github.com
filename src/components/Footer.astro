@@ -1,17 +1,18 @@
 ---
+import { siteConfig } from "../data/site";
 const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-  <p>&copy; {currentYear} Richard Luo. Making dreams come true since 2002.</p>
+  <p>&copy; {currentYear} {siteConfig.name}. Making dreams come true since 2002.</p>
   <p>
-    <a href="mailto:luo.richard@gmail.com" target="_blank" rel="noopener noreferrer nofollow">Email</a>
+    <a href={`mailto:${siteConfig.social.email}`}>Email</a>
     <span aria-hidden="true">•</span>
-    <a href="https://www.linkedin.com/in/richardluorl" target="_blank" rel="noopener noreferrer nofollow">LinkedIn</a>
+    <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer me">LinkedIn</a>
     <span aria-hidden="true">•</span>
-    <a href="https://github.com/Skyline-9" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>
+    <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer me">GitHub</a>
     <span aria-hidden="true">•</span>
-    <a href="https://scholar.google.com/citations?user=Z-u5rZQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer nofollow">Google Scholar</a>
+    <a href={siteConfig.social.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
   </p>
 </footer>
 

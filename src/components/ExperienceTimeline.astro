@@ -14,46 +14,48 @@ import { experiences } from "../data/experience";
     <span>Work Experience</span>
   </h2>
   <div class="timeline">
-    {experiences.map((item, index) => {
-      const animateDelay = Math.min(index * 100, 400);
-      const isRight = index % 2 === 0;
-      const rowClass = isRight ? "timeline-row--right" : "timeline-row--left";
-      const animateDirection = isRight ? "fade-right" : "fade-left";
+    {
+      experiences.map((item, index) => {
+        const animateDelay = Math.min(index * 100, 400);
+        const isRight = index % 2 === 0;
+        const rowClass = isRight ? "timeline-row--right" : "timeline-row--left";
+        const animateDirection = isRight ? "fade-right" : "fade-left";
 
-      const isActive = item.date.includes("Present");
+        const isActive = item.date.includes("Present");
 
-      return (
-        <div class={`timeline-row ${rowClass} ${isActive ? "timeline-row--active" : ""}`}>
-          <div class="timeline-marker">
-            <span class={`timeline-dot ${isActive ? "timeline-dot--active" : ""}`}></span>
-          </div>
-          <div
-            class="cy-card timeline-content hover-lift"
-            style="--cy-accent-1: var(--ctp-mocha-peach);"
-            data-mouse-glow
-            data-animate={animateDirection}
-            data-animate-delay={`${animateDelay}`}
-          >
-            <div class="card-header">
-              <div class="card-logo">
-                <Image src={item.image} alt={item.altText} width={56} height={56} />
-              </div>
-              <div class="card-meta">
-                <h3 class="card-company">{item.company}</h3>
-                <p class="card-role">{item.role}</p>
-                <p class="card-team">{item.team}</p>
-                <p class="card-date">{item.date}</p>
-              </div>
+        return (
+          <div class={`timeline-row ${rowClass} ${isActive ? "timeline-row--active" : ""}`}>
+            <div class="timeline-marker">
+              <span class={`timeline-dot ${isActive ? "timeline-dot--active" : ""}`} />
             </div>
-            {item.description && (
-              <div class="card-body">
-                <p class="card-description">{item.description}</p>
+            <div
+              class="cy-card timeline-content hover-lift"
+              style="--cy-accent-1: var(--ctp-mocha-peach);"
+              data-mouse-glow
+              data-animate={animateDirection}
+              data-animate-delay={`${animateDelay}`}
+            >
+              <div class="card-header">
+                <div class="card-logo">
+                  <Image src={item.image} alt={item.altText} width={56} height={56} />
+                </div>
+                <div class="card-meta">
+                  <h3 class="card-company">{item.company}</h3>
+                  <p class="card-role">{item.role}</p>
+                  <p class="card-team">{item.team}</p>
+                  <p class="card-date">{item.date}</p>
+                </div>
               </div>
-            )}
+              {item.description && (
+                <div class="card-body">
+                  <p class="card-description">{item.description}</p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      );
-    })}
+        );
+      })
+    }
   </div>
 </div>
 
@@ -107,19 +109,32 @@ import { experiences } from "../data/experience";
     height: 12px;
     border-radius: 50%;
     background: var(--ctp-mocha-peach);
-    box-shadow: 0 0 0 3px var(--ctp-mocha-base), 0 0 0 4px var(--ctp-mocha-surface1);
+    box-shadow:
+      0 0 0 3px var(--ctp-mocha-base),
+      0 0 0 4px var(--ctp-mocha-surface1);
     flex-shrink: 0;
   }
 
   .timeline-dot--active {
     background: var(--ctp-mocha-green);
-    box-shadow: 0 0 0 3px var(--ctp-mocha-base), 0 0 0 4px var(--ctp-mocha-surface1);
+    box-shadow:
+      0 0 0 3px var(--ctp-mocha-base),
+      0 0 0 4px var(--ctp-mocha-surface1);
     animation: pulse 2s ease-in-out infinite;
   }
 
   @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 3px var(--ctp-mocha-base), 0 0 0 5px rgba(166, 227, 161, 0.3); }
-    50% { box-shadow: 0 0 0 3px var(--ctp-mocha-base), 0 0 0 7px rgba(166, 227, 161, 0.1); }
+    0%,
+    100% {
+      box-shadow:
+        0 0 0 3px var(--ctp-mocha-base),
+        0 0 0 5px rgba(166, 227, 161, 0.3);
+    }
+    50% {
+      box-shadow:
+        0 0 0 3px var(--ctp-mocha-base),
+        0 0 0 7px rgba(166, 227, 161, 0.1);
+    }
   }
 
   /* Right-side cards (even index) */

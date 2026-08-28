@@ -21,7 +21,8 @@ export const experiences: ExperienceItem[] = [
     image: tmobile,
     altText: "T-Mobile logo",
     team: "IntentCX – Innovation Pod",
-    description: "Serving as Tech Lead for the Innovation Pod, driving the technical architecture and development for IntentCX.",
+    description:
+      "Serving as Tech Lead for the Innovation Pod, driving the technical architecture and development for IntentCX.",
   },
   {
     date: "June 2024 - October 2025",

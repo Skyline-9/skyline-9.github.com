@@ -13,15 +13,18 @@
 ### Task 1: Update Hero Subtitle
 
 **Files:**
+
 - Modify: `src/components/CyberpunkGlitch.astro`
 
 - [ ] **Step 1: Replace existing subtitle text**
 
 ```astro
 <<<<
-  <p class="hero-subtitle animate-fade-in-up delay-300">Machine Learning Engineer | Agentic AI</p>
+<p class="hero-subtitle animate-fade-in-up delay-300">Machine Learning Engineer | Agentic AI</p>
 ====
-  <p class="hero-subtitle animate-fade-in-up delay-300">Tech Lead, Agentic AI | Senior AI Modeling Engineer</p>
+<p class="hero-subtitle animate-fade-in-up delay-300">
+  Tech Lead, Agentic AI | Senior AI Modeling Engineer
+</p>
 >>>>
 ```
 
@@ -42,24 +45,24 @@ git commit -m "feat: update hero subtitle to reflect senior tech lead role"
 ### Task 2: Update Profile Image Alt Text
 
 **Files:**
+
 - Modify: `src/components/IntroCard.astro`
 
 - [ ] **Step 1: Update the alt attribute of the profile image**
 
 ```astro
 <<<<
-      <Image
-        class="w-4/5 md:w-[30%] h-auto object-cover rounded-sm transition-all duration-300 mx-auto md:m-4"
-        src={me}
-        alt="Richard Luo, Machine Learning Engineer"
-        widths={[400, 800, 1200]}
-====
-      <Image
-        class="w-4/5 md:w-[30%] h-auto object-cover rounded-sm transition-all duration-300 mx-auto md:m-4"
-        src={me}
-        alt="Richard Luo, Senior AI Modeling Engineer"
-        widths={[400, 800, 1200]}
->>>>
+<Image
+  class="w-4/5 md:w-[30%] h-auto object-cover rounded-sm transition-all duration-300 mx-auto md:m-4"
+  src={me}
+  alt="Richard Luo, Machine Learning Engineer"
+  widths={[400, 800, 1200]}
+  <Image
+  class="w-4/5 md:w-[30%] h-auto object-cover rounded-sm transition-all duration-300 mx-auto md:m-4"
+  src={me}
+  alt="Richard Luo, Senior AI Modeling Engineer"
+  widths={[400, 800, 1200]}>>>></Image
+>
 ```
 
 - [ ] **Step 2: Verify the change with grep**

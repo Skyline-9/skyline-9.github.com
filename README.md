@@ -12,71 +12,91 @@
     <img src="src/assets/social_preview.png" alt="Social Preview" width="800">
   </a>
 
-<h3 align="center">Richard Luo Personal Website</h3>
+<h3 align="center">Richard Luo — Personal Portfolio & Research</h3>
 
   <p align="center">
-    My personal website built with Astro and Tailwind CSS, featuring a cyberpunk-inspired design with glass card effects and custom SVG tech frames.
+    Personal portfolio and research showcase for Richard Luo (Senior AI Modeling Engineer & Tech Lead, Agentic AI). Built with Astro v5, Tailwind CSS, TypeScript, and Catppuccin Mocha theme.
     <br />
     <br />
-    <a href="https://skyline-9.github.io/"><strong>Check it out! »</strong></a>
+    <a href="https://skyline-9.github.io/"><strong>Live Site »</strong></a>
+    ·
+    <a href="https://skyline-9.github.io/llms.txt"><strong>llms.txt »</strong></a>
     <br />
     <br />
   </p>
 </p>
 
 <!-- FEATURES -->
+
 ## Features
 
-- Cyberpunk-style UI with translucent glass cards and HUD-style frames
-- Animated grid background with radial fade
-- Mouse-follow glow effects on interactive cards
-- Scroll reveal animations with staggered delays
-- Alternating timeline layout with active job highlighting
-- Sticky header with scroll-spy navigation
-- Scroll progress indicator
-- TikTok-style glitch effects on section icons
-- Responsive design (desktop alternating layout, mobile single-column)
-- Catppuccin Mocha color palette
-- Respects `prefers-reduced-motion` for accessibility
+- **Cyberpunk Aesthetic:** Translucent glassmorphism cards, interactive HUD-style SVG frames, and glitch effects.
+- **Single Source of Truth:** Centralized data architecture in `src/data/` powering the UI, SEO meta tags, Schema.org structured data, and `llms.txt`.
+- **AI-Native (`llms.txt`):** Dynamic Astro endpoint automatically generates `/llms.txt` for AI search engines (Perplexity, ChatGPT, Claude) at build time.
+- **Rich Semantic SEO:** Complete Open Graph, Twitter cards, and Schema.org JSON-LD (`Person`, `ProfilePage`, `WebSite`) entity graph.
+- **Interactive UI:** Mouse-follow glow effects on cards, Intersection Observer scroll reveals, and sticky scroll-spy navigation.
+- **Accessibility:** Catppuccin Mocha high-contrast palette, semantic HTML, and full `prefers-reduced-motion` compliance.
+
+<!-- ARCHITECTURE -->
+
+## Project Structure
+
+```
+src/
+├── data/
+│   ├── site.ts          # Core profile metadata, bio, roles, social links, skills
+│   ├── experience.ts    # Work history and timeline items
+│   └── projects.ts      # Research papers, publications, and project builds
+├── layouts/
+│   └── BaseLayout.astro # Head meta, Open Graph, Twitter cards, Schema.org JSON-LD
+├── pages/
+│   ├── index.astro      # Main single-page portfolio
+│   └── llms.txt.ts      # Dynamic endpoint generating static /llms.txt
+└── components/          # Modular Astro & React components
+```
 
 <!-- SETUP -->
-## Setup
+
+## Setup & Development
 
 **Requirements**
+
 - Node.js (v18+)
 - npm
 
-**Installation**
+**Commands**
 
 ```bash
 # Install dependencies
 npm install
 
-# Start development server
+# Start local dev server (http://localhost:4321)
 npm run dev
 
-# Build for production
+# Run type check and static build
 npm run build
 
-# Preview production build
+# Preview production build locally
 npm run preview
 
 # Lint code
 npm run lint
+npm run lint:fix
 
-# Format code
+# Format code with Prettier
 npm run format
 ```
 
 **Deployment**
 
-The site is configured for GitHub Pages deployment. Push to the main branch and GitHub Actions will handle the build and deployment.
+The site is configured for static hosting on GitHub Pages. Pushing to the `main` branch automatically triggers GitHub Actions to run diagnostics, build the static output, and deploy.
 
 <!-- TECH STACK -->
+
 ## Tech Stack
 
 - [Astro](https://astro.build/) - Static site generator
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
-- [Phosphor Icons](https://phosphoricons.com/) - Flexible icon library with duotone support
-- [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/) - Code quality and formatting
+- [Phosphor Icons](https://phosphoricons.com/) - Icon library with duotone support
+- [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/) - Code quality & formatting

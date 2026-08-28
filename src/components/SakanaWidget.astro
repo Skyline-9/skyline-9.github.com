@@ -9,15 +9,15 @@ import takina from "../assets/images/takina.png";
 // Character images
 const characters = {
   chisato: chisato,
-  takina: takina
+  takina: takina,
 };
 ---
 
 <div class="sakana-widget" data-character="chisato">
   <div class="sakana-container">
     <canvas class="sakana-canvas"></canvas>
-    <Image 
-      class="sakana-character" 
+    <Image
+      class="sakana-character"
       src={characters.chisato}
       alt="Sakana character"
       draggable="false"
@@ -95,7 +95,7 @@ const characters = {
     private ctx: CanvasRenderingContext2D;
     private character: HTMLImageElement;
     private widget: HTMLElement;
-    
+
     // Spring physics state
     private x = 0;
     private y = 0;
@@ -103,50 +103,50 @@ const characters = {
     private vy = 0;
     private rotate = 0;
     private vRotate = 0;
-    
+
     // Drag state
     private isDragging = false;
     private dragStartX = 0;
     private dragStartY = 0;
     private initialX = 0;
     private initialY = 0;
-    
+
     // Physics constants
     private readonly tension = 180;
-    private readonly friction = 4;  // Reduced from 12 for more visible bounce
+    private readonly friction = 4; // Reduced from 12 for more visible bounce
     private readonly mass = 1;
     private readonly maxDistance: number;
-    
+
     // Animation
     private animationId: number | null = null;
     private lastTime = 0;
 
     constructor(widget: HTMLElement) {
       this.widget = widget;
-      this.container = widget.querySelector('.sakana-container')!;
-      this.canvas = widget.querySelector('.sakana-canvas')!;
-      this.character = widget.querySelector('.sakana-character')!;
-      this.ctx = this.canvas.getContext('2d')!;
-      
+      this.container = widget.querySelector(".sakana-container")!;
+      this.canvas = widget.querySelector(".sakana-canvas")!;
+      this.character = widget.querySelector(".sakana-character")!;
+      this.ctx = this.canvas.getContext("2d")!;
+
       // Set canvas size
       const rect = this.container.getBoundingClientRect();
       this.canvas.width = rect.width;
       this.canvas.height = rect.height;
       this.maxDistance = Math.min(rect.width, rect.height) / 2 - 20;
-      
+
       this.bindEvents();
       this.startAnimation();
     }
 
     private bindEvents() {
       // Pointer events for drag
-      this.container.addEventListener('pointerdown', this.onPointerDown.bind(this));
-      window.addEventListener('pointermove', this.onPointerMove.bind(this));
-      window.addEventListener('pointerup', this.onPointerUp.bind(this));
-      window.addEventListener('pointercancel', this.onPointerUp.bind(this));
-      
+      this.container.addEventListener("pointerdown", this.onPointerDown.bind(this));
+      window.addEventListener("pointermove", this.onPointerMove.bind(this));
+      window.addEventListener("pointerup", this.onPointerUp.bind(this));
+      window.addEventListener("pointercancel", this.onPointerUp.bind(this));
+
       // Double click to switch character
-      this.container.addEventListener('dblclick', this.switchCharacter.bind(this));
+      this.container.addEventListener("dblclick", this.switchCharacter.bind(this));
     }
 
     private onPointerDown(e: PointerEvent) {
@@ -156,24 +156,24 @@ const characters = {
       this.dragStartY = e.clientY;
       this.initialX = this.x;
       this.initialY = this.y;
-      
+
       // Reset velocity when starting drag
       this.vx = 0;
       this.vy = 0;
       this.vRotate = 0;
-      
+
       this.container.setPointerCapture(e.pointerId);
     }
 
     private onPointerMove(e: PointerEvent) {
       if (!this.isDragging) return;
-      
+
       const dx = e.clientX - this.dragStartX;
       const dy = e.clientY - this.dragStartY;
-      
+
       let newX = this.initialX + dx;
       let newY = this.initialY + dy;
-      
+
       // Clamp to max distance (circular boundary)
       const distance = Math.sqrt(newX * newX + newY * newY);
       if (distance > this.maxDistance) {
@@ -181,7 +181,7 @@ const characters = {
         newX = Math.cos(angle) * this.maxDistance;
         newY = Math.sin(angle) * this.maxDistance;
       }
-      
+
       this.x = newX;
       this.y = newY;
       this.rotate = Math.max(Math.min(45, newX / 2), -45);
@@ -195,9 +195,9 @@ const characters = {
 
     private switchCharacter() {
       const current = this.widget.dataset.character;
-      const next = current === 'chisato' ? 'takina' : 'chisato';
+      const next = current === "chisato" ? "takina" : "chisato";
       this.widget.dataset.character = next;
-      
+
       const nextSrc = this.character.dataset[`${next}Src`];
       if (nextSrc) {
         this.character.src = nextSrc;
@@ -220,24 +220,24 @@ const characters = {
         const springForceX = -this.tension * this.x;
         const dampingForceX = -this.friction * this.vx;
         const ax = (springForceX + dampingForceX) / this.mass;
-        
+
         const springForceY = -this.tension * this.y;
         const dampingForceY = -this.friction * this.vy;
         const ay = (springForceY + dampingForceY) / this.mass;
-        
+
         const springForceR = -this.tension * this.rotate;
         const dampingForceR = -this.friction * this.vRotate;
         const ar = (springForceR + dampingForceR) / this.mass;
-        
+
         // Verlet integration
         this.vx += ax * dt;
         this.vy += ay * dt;
         this.vRotate += ar * dt;
-        
+
         this.x += this.vx * dt;
         this.y += this.vy * dt;
         this.rotate += this.vRotate * dt;
-        
+
         // Stop when motion is negligible
         const velocity = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
         const position = Math.sqrt(this.x * this.x + this.y * this.y);
@@ -258,17 +258,17 @@ const characters = {
     private render() {
       const centerX = this.canvas.width / 2;
       const centerY = this.canvas.height / 2;
-      
+
       // Clear and draw line
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.beginPath();
       this.ctx.lineWidth = 3;
-      this.ctx.strokeStyle = 'rgba(116, 199, 236, 0.6)';
-      this.ctx.lineCap = 'round';
+      this.ctx.strokeStyle = "rgba(116, 199, 236, 0.6)";
+      this.ctx.lineCap = "round";
       this.ctx.moveTo(centerX, centerY);
       this.ctx.lineTo(centerX + this.x, centerY + this.y);
       this.ctx.stroke();
-      
+
       // Update character transform
       this.character.style.transform = `translate(calc(-50% + ${this.x}px), calc(-50% + ${this.y}px)) rotate(${this.rotate}deg)`;
     }
@@ -281,15 +281,15 @@ const characters = {
   }
 
   // Initialize widget
-  document.addEventListener('DOMContentLoaded', () => {
-    const widget = document.querySelector('.sakana-widget');
+  document.addEventListener("DOMContentLoaded", () => {
+    const widget = document.querySelector(".sakana-widget");
     if (widget) {
       new SakanaWidget(widget as HTMLElement);
     }
   });
 
   // Also try immediately in case DOM is already loaded
-  const widget = document.querySelector('.sakana-widget');
+  const widget = document.querySelector(".sakana-widget");
   if (widget) {
     new SakanaWidget(widget as HTMLElement);
   }

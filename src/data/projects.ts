@@ -79,7 +79,13 @@ export const projects: Project[] = [
       "Uses both visual and audio cues to align relevance and “interestingness” with user intent.",
       "Transformer-style encoder–decoder design inspired by ViT techniques.",
     ],
-    tech: ["Multimodal Transformers", "Video Retrieval", "Highlight Detection", "Audio-Visual", "NLP"],
+    tech: [
+      "Multimodal Transformers",
+      "Video Retrieval",
+      "Highlight Detection",
+      "Audio-Visual",
+      "NLP",
+    ],
     image: jointmoment,
     altText: "Joint Moment Retrieval transformer architecture diagram",
     links: [

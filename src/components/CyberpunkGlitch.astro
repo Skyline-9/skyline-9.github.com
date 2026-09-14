@@ -1,8 +1,5 @@
 ---
 import Button from "./Button.astro";
-import resume from "../assets/richard_luo_resume.pdf";
-
-const resumeUrl = resume;
 
 interface Props {
   bgImage?: string;
@@ -20,7 +17,7 @@ const { bgImage } = Astro.props;
     Tech Lead, Agentic AI | Senior AI Modeling Engineer
   </p>
   <div class="cta-wrapper animate-fade-in-up delay-500">
-    <Button href={resumeUrl} label="Check out my resume" id="resume-button" />
+    <Button href="#projects" label="View Research & Work" id="explore-button" />
   </div>
   <a href="#about" class="scroll-down animate-fade-in-up delay-700" aria-label="Scroll down">
     <svg

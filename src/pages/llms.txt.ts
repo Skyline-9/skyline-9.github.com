@@ -27,6 +27,11 @@ export const GET: APIRoute = async () => {
     if (exp.description) {
       lines.push(exp.description);
     }
+    if (exp.highlights && exp.highlights.length > 0) {
+      exp.highlights.forEach((bullet) => {
+        lines.push(`- ${bullet}`);
+      });
+    }
     lines.push("");
   });
 

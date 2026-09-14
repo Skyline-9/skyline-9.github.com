@@ -3,12 +3,14 @@ interface Props {
   href: string;
   label: string;
   id?: string;
+  target?: string;
 }
 
-const { href, label, id } = Astro.props;
+const { href, label, id, target = href.startsWith("#") ? undefined : "_blank" } = Astro.props;
+const rel = target === "_blank" ? "noopener noreferrer" : undefined;
 ---
 
-<a class="scifi-button" id={id} href={href} target="_blank" rel="noopener noreferrer">
+<a class="scifi-button" id={id} href={href} target={target} rel={rel}>
   {label}
 </a>
 

@@ -4,6 +4,7 @@ import socialPreview from "../assets/social_preview.png";
 import nunito400 from "@fontsource/nunito-sans/files/nunito-sans-latin-400-normal.woff2?url";
 import chakra600 from "@fontsource/chakra-petch/files/chakra-petch-latin-600-normal.woff2?url";
 import { siteConfig } from "../data/site";
+import { experiences } from "../data/experience";
 
 interface Props {
   title?: string;
@@ -47,6 +48,16 @@ const schemaData = {
         name: siteConfig.education.school,
       },
       knowsAbout: siteConfig.skills,
+      hasOccupation: experiences.map((exp) => ({
+        "@type": "Occupation",
+        name: exp.role,
+        occupationalCategory: exp.team,
+        description: [exp.description, ...(exp.highlights ?? [])].filter(Boolean).join(" "),
+        worksFor: {
+          "@type": "Organization",
+          name: exp.company,
+        },
+      })),
     },
     {
       "@type": "ProfilePage",
